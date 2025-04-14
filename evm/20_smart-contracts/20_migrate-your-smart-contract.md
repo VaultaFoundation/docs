@@ -2,11 +2,11 @@
 title: Migrate your Smart Contract
 ---
 
-This guide will teach you to deploy a smart contract to the EOS EVM using hardhat on both the EOS EVM mainnet and testnet.
+This guide will teach you to deploy a smart contract to the Vaulta EVM using hardhat on both the Vaulta EVM mainnet and testnet.
 
 ## Set up your MetaMask
 
-Click either of these buttons to instantly add EOS EVM to your MetaMask.
+Click either of these buttons to instantly add Vaulta EVM to your MetaMask.
 
 <!-- translation-ignore -->
 
@@ -32,9 +32,12 @@ import FaucetTokens from '@site/src/components/FaucetTokens/FaucetTokens';
 
 If you're on the testnet, you can get some EOS tokens using the [**testnet faucet**](https://faucet.testnet.evm.eosnetwork.com/).
 
-If you're on the EOS Mainnet, ]you can transfer your native EOS using a standard EOS transfer:
+If you're on the Vaulta Mainnet, ]you can transfer your native EOS using a standard EOS transfer:
 - Send tokens to: `eosio.evm`
-- Set the `memo` to your EOS EVM address
+- Set the `memo` to your Vaulta EVM address
+
+> ⚠️ **Important**
+> If you have only Vaulta, you will need to swap it to EOS. See the EVM tokens page below for more information.
 
 For more ways to get EOS tokens, check out the [EVM Tokens](/evm/10_quick-start/03_evm-tokens.md) page.
 
@@ -52,11 +55,11 @@ const config: HardhatUserConfig = {
     // ...
 
     networks: {
-        eosevm: {
+        vaulta_evm: {
             url: "https://api.evm.eosnetwork.com",
             accounts:[process.env.PRIVATE_KEY],
         },
-        eosevm_testnet: {
+        vaulta_evm_testnet: {
             url: "https://api.testnet.evm.eosnetwork.com",
             accounts:[process.env.PRIVATE_KEY],
         }
@@ -75,13 +78,13 @@ const config: HardhatUserConfig = {
 
 ## Deploying your contract
 
-Now you can deploy your contract to the EOS EVM testnet:
+Now you can deploy your contract to the Vaulta EVM testnet:
 
 ```bash
-npx hardhat run scripts/deploy.js --network eosevm
+npx hardhat run scripts/deploy.js --network vaulta_evm
 
 // or for testnet
-npx hardhat run scripts/deploy.js --network eosevm_testnet
+npx hardhat run scripts/deploy.js --network vaulta_evm_testnet
 ```
 
 Once deployed, you will see the address of your new contract, and can view it an explorer by pasting it 
@@ -94,10 +97,10 @@ into the search field.
 
 ## Congratulations!
 
-You have successfully deployed your first smart contract to the EOS EVM! 🎉
+You have successfully deployed your first smart contract to the Vaulta EVM! 🎉
 
 If you already have a front-end application that interacts with your smart contract, you can now point it at the 
-[EOS EVM Endpoints](/evm/999_miscellaneous/10_endpoints.md), and it will work as expected.
+[Vaulta EVM Endpoints](/evm/999_miscellaneous/10_endpoints.md), and it will work as expected.
 
 Make sure you visit the [**Compatibility**](/evm/999_miscellaneous/20_evm-compatibility.md) section to learn about the differences between
-the EOS EVM and Ethereum, and how to make sure your web3 application works on the EOS EVM as expected.
+the Vaulta EVM and Ethereum, and how to make sure your web3 application works on the Vaulta EVM as expected.

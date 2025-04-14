@@ -4,7 +4,7 @@ First, the fact you're even here right now means you're awesome. Thanks!
 
 Contributing can be as easy or as hard as you want it to be. 
 We're happy to accept anything from small typo corrections to entirely new documents. 
-If you're looking for a place to start, consider [taking an item from our backlog](https://github.com/orgs/eosnetworkfoundation/projects/18/views/10)
+If you're looking for a place to start, consider [taking an item from our backlog](https://github.com/orgs/vaultafoundation/projects/18/views/10)
 that doesn't have a `🔥 crit` priority (we usually take those in our upcoming iteration)
 
 Some ways you can contribute:

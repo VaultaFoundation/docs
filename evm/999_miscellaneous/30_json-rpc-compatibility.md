@@ -2,64 +2,64 @@
 title: JSON RPC Compatibility
 ---
 
-All the JSON-RPC calls are inherently supported thanks to the full functioning EOS EVM node which is built based on Silkworm node. However, some methods are blocked in the current phase for the following reasons:
+All the JSON-RPC calls are inherently supported thanks to the full functioning Vaulta EVM node which is built based on Silkworm node. However, some methods are blocked in the current phase for the following reasons:
 
 * Some methods are deprecated or discontinued.
-* Some methods are designed for the local node scenario. They are not exposed to the public API, however you can access them when you deploy your own EOS EVM node.
+* Some methods are designed for the local node scenario. They are not exposed to the public API, however you can access them when you deploy your own Vaulta EVM node.
 * Some methods involve complex logic, therefore more tests need to be performed before they will be exposed.
 
 ## RPC List
 
 Notes:
 * The JSON-RPC calls listed below do NOT include methods that are blocked in the current phase.
-* "EOS EVM Node-SlowQuery" is designated for nodes dedicated to handle slow or heavy queries. This is done so that those slow queries do not stop or degrade the performance of regular nodes serving other method requests.
+* "Vaulta EVM Node-SlowQuery" is designated for nodes dedicated to handle slow or heavy queries. This is done so that those slow queries do not stop or degrade the performance of regular nodes serving other method requests.
 
 | RPC Method                                  | Destination  |
 | ------------------------------------------- | ------------ |
-| net\_version                                | EOS EVM node |
-| eth\_blockNumber                            | EOS EVM node |
-| eth\_chainId                                | EOS EVM node |
-| eth\_protocolVersion                        | EOS EVM node |
+| net\_version                                | Vaulta EVM node |
+| eth\_blockNumber                            | Vaulta EVM node |
+| eth\_chainId                                | Vaulta EVM node |
+| eth\_protocolVersion                        | Vaulta EVM node |
 | eth\_gasPrice                               | Tx Wrapper   |
-| eth\_getBlockByHash                         | EOS EVM node |
-| eth\_getBlockByNumber                       | EOS EVM node |
-| eth\_getBlockTransactionCountByHash         | EOS EVM node |
-| eth\_getBlockTransactionCountByNumber       | EOS EVM node |
-| eth\_getUncleByBlockHashAndIndex            | EOS EVM node |
-| eth\_getUncleByBlockNumberAndIndex          | EOS EVM node |
-| eth\_getUncleCountByBlockHash               | EOS EVM node |
-| eth\_getUncleCountByBlockNumber             | EOS EVM node |
-| eth\_getTransactionByHash                   | EOS EVM node |
-| eth\_getRawTransactionByHash                | EOS EVM node |
-| eth\_getTransactionByBlockHashAndIndex      | EOS EVM node |
-| eth\_getRawTransactionByBlockHashAndIndex   | EOS EVM node |
-| eth\_getTransactionByBlockNumberAndIndex    | EOS EVM node |
-| eth\_getRawTransactionByBlockNumberAndIndex | EOS EVM node |
-| eth\_getTransactionReceipt                  | EOS EVM node |
-| eth\_getBlockReceipts                       | EOS EVM node |
-| eth\_estimateGas                            | EOS EVM node |
-| eth\_getBalance                             | EOS EVM node |
-| eth\_getCode                                | EOS EVM node |
-| eth\_getTransactionCount                    | EOS EVM node |
-| eth\_getStorageAt                           | EOS EVM node |
-| eth\_call                                   | EOS EVM node |
-| eth\_callBundle                             | EOS EVM node |
-| eth\_createAccessList                       | EOS EVM node |
-| eth\_getLogs                                | EOS EVM Node-SlowQuery |
+| eth\_getBlockByHash                         | Vaulta EVM node |
+| eth\_getBlockByNumber                       | Vaulta EVM node |
+| eth\_getBlockTransactionCountByHash         | Vaulta EVM node |
+| eth\_getBlockTransactionCountByNumber       | Vaulta EVM node |
+| eth\_getUncleByBlockHashAndIndex            | Vaulta EVM node |
+| eth\_getUncleByBlockNumberAndIndex          | Vaulta EVM node |
+| eth\_getUncleCountByBlockHash               | Vaulta EVM node |
+| eth\_getUncleCountByBlockNumber             | Vaulta EVM node |
+| eth\_getTransactionByHash                   | Vaulta EVM node |
+| eth\_getRawTransactionByHash                | Vaulta EVM node |
+| eth\_getTransactionByBlockHashAndIndex      | Vaulta EVM node |
+| eth\_getRawTransactionByBlockHashAndIndex   | Vaulta EVM node |
+| eth\_getTransactionByBlockNumberAndIndex    | Vaulta EVM node |
+| eth\_getRawTransactionByBlockNumberAndIndex | Vaulta EVM node |
+| eth\_getTransactionReceipt                  | Vaulta EVM node |
+| eth\_getBlockReceipts                       | Vaulta EVM node |
+| eth\_estimateGas                            | Vaulta EVM node |
+| eth\_getBalance                             | Vaulta EVM node |
+| eth\_getCode                                | Vaulta EVM node |
+| eth\_getTransactionCount                    | Vaulta EVM node |
+| eth\_getStorageAt                           | Vaulta EVM node |
+| eth\_call                                   | Vaulta EVM node |
+| eth\_callBundle                             | Vaulta EVM node |
+| eth\_createAccessList                       | Vaulta EVM node |
+| eth\_getLogs                                | Vaulta EVM Node-SlowQuery |
 | eth\_sendRawTransaction                     | Tx Wrapper   |
-| debug\_traceBlockByHash                     | EOS EVM Node-SlowQuery |
-| debug\_traceBlockByNumber                   | EOS EVM Node-SlowQuery |
-| debug\_traceTransaction                     | EOS EVM Node-SlowQuery |
-| debug\_traceCall                            | EOS EVM Node-SlowQuery |
-| trace\_call                                 | EOS EVM Node-SlowQuery |
-| trace\_callMany                             | EOS EVM Node-SlowQuery |
-| trace\_rawTransaction                       | EOS EVM Node-SlowQuery |
-| trace\_replayBlockTransactions              | EOS EVM Node-SlowQuery |
-| trace\_replayTransaction                    | EOS EVM Node-SlowQuery |
-| trace\_block                                | EOS EVM Node-SlowQuery |
-| trace\_filter                               | EOS EVM Node-SlowQuery |
-| trace\_get                                  | EOS EVM Node-SlowQuery |
-| trace\_transaction                          | EOS EVM Node-SlowQuery |
+| debug\_traceBlockByHash                     | Vaulta EVM Node-SlowQuery |
+| debug\_traceBlockByNumber                   | Vaulta EVM Node-SlowQuery |
+| debug\_traceTransaction                     | Vaulta EVM Node-SlowQuery |
+| debug\_traceCall                            | Vaulta EVM Node-SlowQuery |
+| trace\_call                                 | Vaulta EVM Node-SlowQuery |
+| trace\_callMany                             | Vaulta EVM Node-SlowQuery |
+| trace\_rawTransaction                       | Vaulta EVM Node-SlowQuery |
+| trace\_replayBlockTransactions              | Vaulta EVM Node-SlowQuery |
+| trace\_replayTransaction                    | Vaulta EVM Node-SlowQuery |
+| trace\_block                                | Vaulta EVM Node-SlowQuery |
+| trace\_filter                               | Vaulta EVM Node-SlowQuery |
+| trace\_get                                  | Vaulta EVM Node-SlowQuery |
+| trace\_transaction                          | Vaulta EVM Node-SlowQuery |
 
 ## Batched Requests
 

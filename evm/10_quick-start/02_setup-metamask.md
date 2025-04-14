@@ -2,7 +2,7 @@
 title: Setup MetaMask
 ---
 
-Click either of these buttons to instantly add EOS EVM to your MetaMask.
+Click either of these buttons to instantly add Vaulta EVM to your MetaMask.
 
 <!-- translation-ignore -->
 
@@ -21,7 +21,7 @@ manually with the information below.
 
 ### Mainnet
 
-* `Network Name`: EOS EVM
+* `Network Name`: Vaulta EVM
 * `Chain ID`: 17777
 * `New RPC URL`: https://api.evm.eosnetwork.com/
 * `Currency Symbol`: EOS
@@ -30,7 +30,7 @@ manually with the information below.
 
 ### Testnet
 
-* `Network Name`: EOS EVM Testnet
+* `Network Name`: Vaulta EVM Testnet
 * `Chain ID`: 15557
 * `New RPC URL`: https://api.testnet.evm.eosnetwork.com/
 * `Currency Symbol`: EOS

@@ -2,17 +2,12 @@
 title: Endpoints
 ---
 
-<head><title>EOS EVM Endpoints</title></head>
+<head><title>Vaulta EVM Endpoints</title></head>
 
 | Network | RPC URL  | Chain ID | 
 | --- |--------------------|----------|
 | Mainnet | [api.evm.eosnetwork.com](https://api.evm.eosnetwork.com)                 |  17777   | 
 | Testnet | [api.testnet.evm.eosnetwork.com](https://api.testnet.evm.eosnetwork.com) | 15557    | 
-
-> 💰 **Premium APIs:**
-> 
-> If you're looking for premium API services you can join the 
-> [EOS Servers](https://t.me/eosservers) Telegram group where you can find premium API providers.
 
 ## Explorers
 

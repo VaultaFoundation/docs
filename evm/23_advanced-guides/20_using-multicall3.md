@@ -2,7 +2,7 @@
 title: Using Multicall3
 ---
 
-Multicall3 is a contract deployed to the EOS EVM that allows you to batch multiple calls into a single call. This means
+Multicall3 is a contract deployed to the Vaulta EVM that allows you to batch multiple calls into a single call. This means
 that you can make multiple calls to one or more contracts in a single transaction.
 
 This is useful for reducing the number of transactions you need to make to either read or write data. For instance, if
