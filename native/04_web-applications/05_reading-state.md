@@ -6,24 +6,26 @@ title: Reading State
 
 To follow this guide, you will need:
 
-- An understanding of the EOS blockchain and how it works.
+- An understanding of the Vaulta blockchain and how it works.
 - A command-line interface to run curl commands.
-- Access to an EOS node or an EOS API service.
+- Access to a Vaulta node or a Vaulta API service.
 
-## EOS Tables
+## Vaulta Tables
 
-EOS stores data in tables, which are similar to database tables. Each table has a name and a set of fields. Tables are organized into scopes, which are defined by the smart contract that created the table.
+Vaulta stores data in tables, which are similar to database tables. Each table has a name and a set of fields. Tables are 
+organized into scopes, which are defined by the smart contract that created the table.
 
-To retrieve data from a table, you need to know its name, scope, and the name of the smart contract that created it. You can also specify a lower and upper bound to limit the amount of data returned.
+To retrieve data from a table, you need to know its name, scope, and the name of the smart contract that created it. You 
+can also specify a lower and upper bound to limit the amount of data returned.
 
-## Methods to Retrieve Data from EOS Tables
+## Methods to Retrieve Data from Vaulta Tables
 
 ### Use get_table_rows Function
 
 The `get_table_rows` function retrieves rows from a table. It takes the following parameters in JSON format:
 
-- `"code"`: the eos account name which is the owner of the smart contract that created the table.
-- `"scope"`: the scope of the table, it is an eos account name.
+- `"code"`: the Vaulta account name which is the owner of the smart contract that created the table.
+- `"scope"`: the scope of the table, it is a Vaulta account name.
 - `"table"`: a string representing the name of the table.
 - `"json"`: (optional) a boolean value that specifies whether to return the row results in JSON format or binary format, defaults to binary.
 - `"lower_bound"`: (optional) a string representing the lower bound for the table key, defaults to first value of the index used.
@@ -39,7 +41,7 @@ Below is an example that retrieves rows from `abihash` table, owned by the `eosi
 
 ```shell
 curl --request POST \
---url https://eos.greymass.com/v1/chain/get_table_rows \
+--url https://vaulta.greymass.com/v1/chain/get_table_rows \
 --header 'content-type: application/json' \
 --data '{
 "json": true,
@@ -62,11 +64,6 @@ In the example above:
 - The function will fetch a maximum of 3 rows, set by the `limit` parameter.
 - The retrieved rows will be in ascending order, set by the `reverse` parameter.
 
-Alternatively, you can execute the same command with `cleos` utility tool, and have the same result:
-
-```shell
-dune -- cleos -u https://eos.greymass.com get table eosio eosio abihash --lower eosio --limit 3
-```
 
 #### The get_table_rows Result
 
@@ -115,13 +112,13 @@ For example, the result from the previous section command contains three rows, a
 
 Note that the previous command has the `"more"` field set to `true`. That means there's more rows in the table, which match the filter used, that were not returned with the first issued command.
 
-The `"next_key"`, `"lower_bound"` and `"upper_bound"` fields, can be used to implement pagination or iterative retrieval of data from any table in the EOS blockchain.
+The `"next_key"`, `"lower_bound"` and `"upper_bound"` fields, can be used to implement pagination or iterative retrieval of data from any table in the Vaulta blockchain.
 
 To fetch the next set of rows, you can issue another `get_table_rows` request, modifying the lower bound to be the value of the `"next_key"` field:
 
 ```shell
 curl --request POST \
---url https://eos.greymass.com/v1/chain/get_table_rows \
+--url https://vaulta.greymass.com/v1/chain/get_table_rows \
 --header 'content-type: application/json' \
 --data '{
 "json": true,
@@ -134,23 +131,19 @@ curl --request POST \
 }'
 ```
 
-Alternatively, you can execute the same command with `cleos` utility tool, and have the same result:
-
-```shell
-dune -- cleos -u https://eos.greymass.com get table eosio eosio abihash --lower 6138663584080503808 --limit 3
-```
-
-The above commands returns the subsequent 3 rows from the `abihash` table with the producer name value greater than `"6138663584080503808"`. By iterating this process, you can retrieve all the rows in the table.
+The above command returns the subsequent 3 rows from the `abihash` table with the producer name value greater than `"6138663584080503808"`. By iterating this process, you can retrieve all the rows in the table.
 
 If the response from the second request includes `"more": false`, it means that you have fetched all the available rows, which match the filter, and there is no need for further requests.
 
 ### Use get_table_by_scope Function
 
-The purpose of `get_table_by_scope` is to scan the table names under a given `code` account, using `scope` as the primary key. If you already know the table name, e.g. `mytable`, it is not necessary to use `get_table_by_scope` unless you want to find out what are the scopes that have defined the `mytable` table.
+The purpose of `get_table_by_scope` is to scan the table names under a given `code` account, using `scope` as the primary key. 
+If you already know the table name, e.g. `mytable`, it is not necessary to use `get_table_by_scope` unless you want to find out what 
+are the scopes that have defined the `mytable` table.
 
 These are the input parameters supported by `get_table_by_scope`:
 
-- `"code"`: the eos account name which is the owner of the smart contract that created the table.
+- `"code"`: the Vaulta account name which is the owner of the smart contract that created the table.
 - `"table"`: a string representing the name of the table.
 - `"lower_bound"` (optional): This field specifies the lower bound of the scope when querying for table rows. It determines the starting point for fetching rows based on the scope value. Defaults to first value of the scope.
 - `"upper_bound"` (optional): This field specifies the upper bound of the scope when querying for table rows. It determines the ending point for fetching rows based on the scope value.  Defaults to last value of the scope.
@@ -208,17 +201,17 @@ The above result means your request did not finish its execution due to the tran
 
 #### Real Example
 
-For a real example, you can list the first three tables named `accounts` owned by the `eosio.token` account starting with the lower bound scope `eosromania`:
+For a real example, you can list the first three tables named `accounts` owned by the `core.vaulta` account starting with the lower bound scope `abc`:
 
 ```shell
 curl --request POST \
---url https://eos.greymass.com/v1/chain/get_table_by_scope \
+--url https://vaulta.greymass.com/v1/chain/get_table_by_scope \
 --header 'content-type: application/json' \
 --data '{
 "json": true,
-"code": "eosio.token",
+"code": "core.vaulta",
 "table": "accounts",
-"lower_bound": "eosromania",
+"lower_bound": "abc",
 "upper_bound": "",
 "reverse": false,
 "limit": "3"
@@ -231,28 +224,28 @@ The result looks similar to the one below:
 {
   "rows": [
     {
-      "code": "eosio.token",
-      "scope": "eosromania22",
+      "code": "core.vaulta",
+      "scope": "abc",
       "table": "accounts",
-      "payer": "tigerchainio",
+      "payer": "abc.com",
       "count": 1
     },
     {
-      "code": "eosio.token",
-      "scope": "eosromaniaro",
+      "code": "core.vaulta",
+      "scope": "abc.bank",
       "table": "accounts",
-      "payer": "gm3tqmrxhage",
+      "payer": "alibaba.com",
       "count": 1
     },
     {
-      "code": "eosio.token",
-      "scope": "eosromansev1",
+      "code": "core.vaulta",
+      "scope": "abc.com",
       "table": "accounts",
-      "payer": "gateiowallet",
+      "payer": "vuniyuoxoeub",
       "count": 1
     }
   ],
-  "more": "eosromario11"
+  "more": "abc.gm"
 }
 ```
 

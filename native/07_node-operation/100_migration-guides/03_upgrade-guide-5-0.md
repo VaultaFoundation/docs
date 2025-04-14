@@ -56,7 +56,7 @@ disable-subjective-p2p-billing=false
 The following changes to configuration are recommended for nodes running Leap 5+
 
 ### Modify Transaction Time Windows
-- Comment out / Remove `max-transaction-time`, or set to a value above the on-chain limit (eg more than 150ms on EOS)
+- Comment out / Remove `max-transaction-time`, or set to a value above the on-chain limit (eg more than 150ms on Vaulta)
 - Set `read-only-read-window-time-us` to 165,000 (165ms)
 
 These updates are based on performance testing along with empirical data. In production environments, we have noticed cases of transactions exceeding the 30ms limit, and we recommend increasing the time window. `max-transaction-time` should be removed to allow enforcement of the transaction wall-clock deadline to be driven by the objective on-chain limit.

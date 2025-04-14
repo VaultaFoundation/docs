@@ -6,7 +6,7 @@ Authorization is the process of determining whether or not a user has permission
 In blockchain applications this is a key aspect of ensuring the safety of a Smart Contract, and the digital assets that
 it controls.
 
-Checking authorizations with EOS++ can be done in a few ways.
+Checking authorizations with Vaulta can be done in a few ways.
 
 ## Getting the sender
 

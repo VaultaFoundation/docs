@@ -12,10 +12,10 @@ in their uniqueness.
 > 👀 **Want to just create an NFT?**
 > 
 > In this tutorial we are going to discuss creating an NFT that follows Ethereum's ERC721
-> standard so that we can dig into some EOS development using a clear standard.
+> standard so that we can dig into some Vaulta development using a clear standard.
 > 
 > **However**, if you want to create an NFT that follows the [**Atomic Assets**](https://github.com/pinknetworkx/atomicassets-contract) standard which
-> is more common on the EOS Network, you can visit the [Atomic Assets NFT Creator](https://eos.atomichub.io/creator)
+> is more common on Vaulta, you can visit the [Atomic Assets NFT Creator](https://eos.atomichub.io/creator)
 > where you can easily create an NFT that will instantly be listed on the AtomicHub marketplace without deploying any code.
 
 ## What is an NFT Standard?
@@ -55,8 +55,8 @@ CONTRACT nft : public contract {
 
 If we look at the [ERC721 standard](https://eips.ethereum.org/EIPS/eip-721), we can see that
 there are a few actions that we need to implement. Overall the standard is quite simple, but
-some concepts are not necessarily EOS-native. For instance, there is no concept 
-of `approvals` on EOS since you can send tokens directly to another account (via `on_notify` events), unlike Ethereum.
+some concepts are not necessarily Vaulta-native. For instance, there is no concept 
+of `approvals` on Vaulta since you can send tokens directly to another account (via `on_notify` events), unlike Ethereum.
 
 For the sake of keeping the standard as close to the original as possible, we will implement
 those non-native concepts in this tutorial.
@@ -255,7 +255,7 @@ We've created singleton tables for the following:
 > `singleton<"<TABLE NAME>"_n, <ROW TYPE>>`
 > 
 > If we look at the singleton definition, inside the double quotes we have the table name.
-> Names in EOS tables must also follow the Account Name rules, which means they must be
+> Names in Vaulta tables must also follow the Account Name rules, which means they must be
 > 12 characters or less and can only contain the characters `a-z`, `1-5`, and `.`.
 
 Now that we've created the tables and structures that will store data about the NFTs,
@@ -404,7 +404,7 @@ The `balanceof` action is used to get the balance of an account.
 > ⚠ **Return values & Composability**
 > 
 > Return values are only usable from outside the blockchain, and cannot currently be used
-> in EOS for smart contract composability. EOS supports [**inline actions**](/docs/03_smart-contracts/02_actions.md#inline-actions) which can be used
+> in Vaulta for smart contract composability. Vaulta supports [**inline actions**](/docs/03_smart-contracts/02_actions.md#inline-actions) which can be used
 > to call other smart contracts, but they cannot return values.
 
 ### OwnerOf
@@ -723,7 +723,7 @@ CONTRACT nft : public contract {
 
 ## This is for education purposes
 
-Keep in mind, that if you deployed this contract on the EOS Network and minted tokens, there
+Keep in mind, that if you deployed this contract on Vaulta and minted tokens, there
 would be no supported marketplaces to sell them (at the time of writing this guide). This is just for education purposes.
 
 ## Challenge

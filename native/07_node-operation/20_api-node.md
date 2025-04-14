@@ -2,7 +2,7 @@
 title: Run an API Node
 ---
 
-An API node is a critical component of the EOS blockchain network that serves as an interface between users, including dApps, and an EOS blockchain. API nodes serve one of the following roles when handling incoming client requests received through one of the `chain_api_plugin` endpoints:
+An API node is a critical component of the Vaulta blockchain network that serves as an interface between users, including dApps, and a Vaulta blockchain. API nodes serve one of the following roles when handling incoming client requests received through one of the `chain_api_plugin` endpoints:
 
 - **Push API node**: Accepts transactions from HTTP clients and relays them to other peers. Typically does not accept incoming p2p transactions. Upstream traffic only.
 - **Chain API node**: Provides access to blockchain data such as accounts, permissions, contract codes/ABIs, contract tables, etc. Takes API transactions too.
@@ -18,16 +18,16 @@ Push API nodes usually only listen to HTTP client requests, and do not accept in
 
 ## Why would you use an API node?
 
-As a developer, you can deploy your own API node to connect to an EOS blockchain and bring the following functionality to your smart contracts and dApps:
+As a developer, you can deploy your own API node to connect to Vaulta and bring the following functionality to your smart contracts and dApps:
 
 - **Data Access**: API nodes allow users to query the blockchain's state and some of its history, accessing information such as account balances, transaction details, smart contract data, and other blockchain-related data.
 
-- **Transaction Broadcasting**: When users or dApps want to execute a transaction on the EOS blockchain, they submit the transaction to an API node. The node then broadcasts the transaction to the network, ensuring that it reaches all the necessary block producers for inclusion in the blockchain.
+- **Transaction Broadcasting**: When users or dApps want to execute a transaction on Vaulta, they submit the transaction to an API node. The node then broadcasts the transaction to the network, ensuring that it reaches all the necessary block producers for inclusion in the blockchain.
 
 > ℹ️ **Public and Private Nodes**  
 > API nodes can be public or private. Public nodes are open to the public and can be used by anyone, while private nodes are typically operated by developers, applications, or organizations to manage their interactions with the blockchain privately.
 
-- **API Endpoints**: API nodes expose various endpoints that allow clients to interact with the blockchain. These endpoints are typically HTTP/HTTPS-based and follow the EOSIO API specifications, making it easier for developers to integrate EOS into their applications.
+- **API Endpoints**: API nodes expose various endpoints that allow clients to interact with the blockchain. These endpoints are typically HTTP/HTTPS-based and follow the Vaulta API specifications, making it easier for developers to integrate Vaulta into their applications.
 
 - **Load Balancing**: Due to the potential high demand for clients accessing the blockchain, many node operators use a cluster of API nodes for load balancing. This ensures that the network can handle a large number of requests without becoming overwhelmed.
 
@@ -43,22 +43,22 @@ The actual hardware requirements for an API node differ based on the transaction
 
 ## Software Requirements
 
-To setup an API node, first install the Antelope [Leap](https://github.com/AntelopeIO/leap) software. The Leap version to install depends on whether you will deploy your node on an EOS testnet or on the EOS mainnet.
+To setup an API node, first install the Antelope [Leap](https://github.com/AntelopeIO/leap) software. The Leap version to install depends on whether you will deploy your node on an Vaulta testnet or on the Vaulta mainnet.
 
 > ℹ️ **Leap software on mainnet vs. testnets**  
-> EOS testnets typically run the most recent Leap versions, usually the latest one shortly after released. The EOS mainnet will typically use a previous stable release version of the Leap software for stability and security.
+> Vaulta testnets typically run the most recent Leap versions, usually the latest one shortly after released. The Vaulta mainnet will typically use a previous stable release version of the Leap software for stability and security.
 
-To locate which version other API nodes are running for the EOS network you want to deploy on, select your EOS network of choice on the EOS Nation Validate site and navigate to the API report for that network:
+To locate which version other API nodes are running for the Vaulta network you want to deploy on, select your Vaulta network of choice on the EOS Nation Validate site and navigate to the API report for that network:
 
 * https://validate.eosnation.io/
 
-For instance, for the most recent API nodes on EOS mainnet, EOS Jungle testnet, or EOS Kylin testnet, you can visit, respectively:
+For instance, for the most recent API nodes on Vaulta mainnet, Vaulta Jungle testnet, you can visit, respectively:
 
 * https://validate.eosnation.io/eos/reports/api_versions.txt
 * https://validate.eosnation.io/jungle4/reports/api_versions.txt
 * https://validate.eosnation.io/kylin/reports/api_versions.txt
 
-For your API node, you would want to use the same Leap version most other API nodes are using on the EOS network you want to deploy on. You can select the Leap binaries for a specific version here:
+For your API node, you would want to use the same Leap version most other API nodes are using on Vaulta you want to deploy on. You can select the Leap binaries for a specific version here:
 
 * https://github.com/AntelopeIO/leap/tags
 
@@ -81,23 +81,23 @@ API node type | Maintains blocks log | Accepts p2p transactions | Accepts API tr
 
 Your API node will run its own `nodeos` instance. If you haven't launched `nodeos` or have `data` and `config` folders yet, follow the instructions in this section:
 
-* Set the main `nodeos` data folder variable according to the EOS network you plan to deploy on:
+* Set the main `nodeos` data folder variable according to the Vaulta network you plan to deploy on:
 
-  For instance, if deploying on the EOS mainnet, you may select:
+  For instance, if deploying on the Vaulta mainnet, you may select:
   ```ini
-  EOSDIR=~/eos/mainnet
+  VAULTADIR=~/vaulta/mainnet
   ```
-  Or, if deploying on the EOS Jungle testnet, you may select:
+  Or, if deploying on the Vaulta Jungle testnet, you may select:
   ```ini
-  EOSDIR=~/eos/jungle_testnet
+  VAULTADIR=~/vaulta/jungle_testnet
   ```
   etc.
 
 * Create the default `config.ini` file - you will edit it in the steps below:
 
   ```sh
-  mkdir -p $EOSDIR
-  nodeos --print-default-config >$EOSDIR/config.ini
+  mkdir -p $VAULTADIR
+  nodeos --print-default-config >$VAULTADIR/config.ini
   ```
 
 Follow the instructions below to configure an API node as either a Push API, Chain API, or Pull API node. First start with the [Any API node configuration](#any-api-node-configuration), then continue with the API node configuration you selected to deploy:
@@ -109,7 +109,7 @@ The following configuration settings apply to any API node.
 * Open the default `config.ini` with your text editor, for instance:
 
   ```sh
-  vim $EOSDIR/config.ini
+  vim $VAULTADIR/config.ini
   ```
 
 Edit the default `config.ini` and add/uncomment/modify the following fields:
@@ -276,25 +276,25 @@ Follow the instructions below to download the most recent snapshot:
 #### For EOS mainnet
 
   ```sh
-  wget https://snapshots.eosnation.io/eos-v6/latest -O $EOSDIR/snapshots/latest.bin.zst
+  wget https://snapshots.eosnation.io/eos-v6/latest -O $VAULTADIR/snapshots/latest.bin.zst
   ```
 
 #### For Jungle testnet
 
   ```sh
-  wget https://snapshots.eosnation.io/jungle4-v6/latest -O $EOSDIR/snapshots/latest.bin.zst
+  wget https://snapshots.eosnation.io/jungle4-v6/latest -O $VAULTADIR/snapshots/latest.bin.zst
   ```
 
 #### For Kylin testnet
 
   ```sh
-  wget https://snapshots.eosnation.io/kylin-v6/latest -O $EOSDIR/snapshots/latest.bin.zst
+  wget https://snapshots.eosnation.io/kylin-v6/latest -O $VAULTADIR/snapshots/latest.bin.zst
   ```
 
 * Decompress the compressed snapshot:
 
   ```sh
-  zstd -d $EOSDIR/snapshots/latest.bin.zst
+  zstd -d $VAULTADIR/snapshots/latest.bin.zst
   ```
 
 The `snapshots` directory should now contain the uncompressed `latest.bin` snapshot.
@@ -304,12 +304,12 @@ The `snapshots` directory should now contain the uncompressed `latest.bin` snaps
 Follow the instructions below to restore/start your node from the most recent snapshot that you downloaded.
 
 > ℹ `blocks` directory  
-> If you are repeating the instructions above, you might have a ` blocks` directory already in your `$EOSDIR` data directory. Unless you plan to use a blocks log as well, which should at least contain blocks up the snapshot, it is recommended that all existing data in the `blocks` directory is removed: `rm -rf $EOSDIR/blocks` prior to restoring from a snapshot.
+> If you are repeating the instructions above, you might have a ` blocks` directory already in your `$VAULTADIR` data directory. Unless you plan to use a blocks log as well, which should at least contain blocks up the snapshot, it is recommended that all existing data in the `blocks` directory is removed: `rm -rf $VAULTADIR/blocks` prior to restoring from a snapshot.
 
 * Restore/start your node from the latest snapshot:
 
   ```sh
-  nodeos --data-dir $EOSDIR --config-dir $EOSDIR --snapshot $EOSDIR/snapshots/latest.bin >> $EOSDIR/nodeos.log 2>&1 &
+  nodeos --data-dir $VAULTADIR --config-dir $VAULTADIR --snapshot $VAULTADIR/snapshots/latest.bin >> $VAULTADIR/nodeos.log 2>&1 &
   ```
 
 The above command will launch `nodeos`, redirecting `stdout` and `stderr` to `nodeos.log`. More importantly, the `--snapshot` option will sync the chain state of your API node to the state of the EOS network you are deploying on, starting from the latest snapshot. This includes accounts, balances, contract code, tables, etc. but not past transaction history, unless you sync from a blocks log. However, after the syncing is done, your API node should continue to receive the latest irreversible blocks produced, which will now include the recent transaction history.
@@ -321,7 +321,7 @@ The above command will launch `nodeos`, redirecting `stdout` and `stderr` to `no
 
 First, make sure your API node launched successfully and it is still syncing or receiving blocks:
 ```sh
-tail -f $EOSDIR/nodeos.log
+tail -f $VAULTADIR/nodeos.log
 ```
 ```
 ...
@@ -333,7 +333,7 @@ info  2023-08-15T23:16:05.367 nodeos    producer_plugin.cpp:651       on_incomin
 Second, make sure your API node initialized successfully from the snapshot. Search for `snapshot` in the `nodeos.log` file:
 
 ```sh
-grep -i snapshot $EOSDIR/nodeos.log
+grep -i snapshot $VAULTADIR/nodeos.log
 ```
 ```
 info  2023-08-15T23:15:55.395 nodeos    controller.cpp:603            startup              ] Starting initialization from snapshot and no block log, this may take a significant amount of time
@@ -390,4 +390,4 @@ Your API node should return a similar response to the last output above. If you 
 
 ## Summary
 
-In this guide, you configured and deployed an API node on a specific EOS network, such as EOS mainnet, EOS Jungle testnet, EOS Kylin testnet, etc. You can now get some native assets for that network, and use your API node to deploy EOS smart contracts and send transactions, get blockchain data, or both.
+In this guide, you configured and deployed an API node on a specific Vaulta network, such as Vaulta mainnet, Vaulta Jungle testnet, etc. You can now get some native assets for that network, and use your API node to deploy Vaulta smart contracts and send transactions, get blockchain data, or both.

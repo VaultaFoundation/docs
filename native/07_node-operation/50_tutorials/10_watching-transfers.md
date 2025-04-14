@@ -2,10 +2,10 @@
 title: Watching Transfers
 ---
 
-You might want to watch for all transfers that happen within the EOS Network. This is useful for **exchanges** and 
+You might want to watch for all transfers that happen within Vaulta. This is useful for **exchanges** and 
 **wallets** that need to keep track of incoming/outgoing funds.
 
-In EOS, there are multiple ways that a transfer can occur. The most common way is through a `transfer` action on a transaction
+In Vaulta, there are multiple ways that a transfer can occur. The most common way is through a `transfer` action on a transaction
 directly, but a transfer can also occur as an inline action on triggered by a non-transfer action. If you are only
 watching blocks, then you will miss the inline action transfers. This could impact your users' experience.
 
@@ -16,7 +16,7 @@ watching blocks, then you will miss the inline action transfers. This could impa
 > action, as it occurred from a `exchange::withdraw` action. It was a non-root-level action.
 
 Though this tutorial centers around watching for transfers, you can use the same method to watch for any action that
-occurs on the EOS Network, from any contract.
+occurs on Vaulta, from any contract.
 
 ## Download the token ABI
 
@@ -25,13 +25,13 @@ contract yourself, or you can download the ABI directly.
 
 ### Using curl
 
-You can use `curl` to fetch the ABI directly from the EOS Mainnet.
+You can use `curl` to fetch the ABI directly from Vaulta.
 
 ```shell
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{ "account_name":"eosio.token" }' \
-  https://eos.greymass.com/v1/chain/get_abi | jq -r '.abi' > ./eosio.token.abi
+  https://vaulta.greymass.com/v1/chain/get_abi | jq -r '.abi' > ./eosio.token.abi
 ```
 
 The command above will fetch the ABI for the `eosio.token` contract's ABI and save it to a file called `eosio.token.abi`.
@@ -239,7 +239,7 @@ read this.
 
 ### Compiling the contract yourself
 
-You can clone the [EOS System Contracts](https://github.com/eosnetworkfoundation/eos-system-contracts/) repository,
+You can clone the [Vaulta System Contracts](https://github.com/vaultafoundation/eos-system-contracts/) repository,
 and then compile the contracts using the `build.sh` script.
 
 You will then have a `build/contracts` directory that contains the compiled contracts.
@@ -267,11 +267,11 @@ Once you enable the Trace API, you will only get traces for blocks that are prod
 If you want to get traces for blocks that were produced before you enabled the plugin, you will need to replay the chain
 from that block.
 
-> 🕔 **Want to replay from EOS EVM launch?**
+> 🕔 **Want to replay from Vaulta EVM launch?**
 > 
-> If your aim is to get traces for transfers that happen on the EOS EVM, you can use a snapshot that was taken on or before
-> 2023-04-05T02:18:09 UTC. That way you will be able to get traces for transfers that happened on the EOS EVM, but not 
-> waste time replaying blocks that were produced before the EOS EVM launch.
+> If your aim is to get traces for transfers that happen on the Vaulta EVM, you can use a snapshot that was taken on or before
+> 2023-04-05T02:18:09 UTC. That way you will be able to get traces for transfers that happened on the Vaulta EVM, but not 
+> waste time replaying blocks that were produced before the Vaulta EVM launch.
 
 ## SSD considerations
 
@@ -329,7 +329,7 @@ There are some other important things to note about the Trace API's `get_block` 
 
 > 📄 **API reference**
 >
-> For more information about the Trace API, see the [API Reference](https://docs.eosnetwork.com/apis/leap/latest/trace_api.api).
+> For more information about the Trace API, see the [API Reference](https://docs.vaulta.com/apis/leap/latest/trace_api.api).
 
 
 ### Examples of both formats
@@ -563,8 +563,8 @@ When listening for actions there are three primary fields you want to look for.
 - **params** - contains the parameters that were passed to the action
 - **receiver** - tells you which contract is receiving the action
 
-If you were listening for token transfers of **EOS**, you would want to look for actions where the
-**account** field is `eosio.token` and the **action** field is `transfer`.
+If you were listening for token transfers of **Vaulta**, you would want to look for actions where the
+**account** field is `core.vaulta` and the **action** field is `transfer`.
 
 Then, you'll want to validate the information inside the `params` object.
 
@@ -581,7 +581,7 @@ name, and possibly that the memo field matches some identifier that you're expec
     <summary>JavaScript example of checking for transfers</summary>
 
 ```javascript
-const CONTRACT = "eosio.token";
+const CONTRACT = "core.vaulta";
 const ACTION = "transfer";
 const YOUR_ACCOUNT = "someexchange";
 
@@ -612,7 +612,7 @@ for(let transaction of result.transactions) {
                 const [amount, symbol] = quantity.split(' ');
                 // You should also check that the symbol matches
                 // the symbol that you're expecting as well
-                if(symbol !== 'EOS') {
+                if(symbol !== 'VAULTA') {
                     // This is not the token that we're expecting
                     continue;
                 }
@@ -729,5 +729,5 @@ This will give you a single transaction trace in exactly the same format as the 
 
 > 📄 **API reference**
 >
-> For more information about the Trace API, see the [API Reference](https://docs.eosnetwork.com/apis/leap/latest/trace_api.api).
+> For more information about the Trace API, see the [API Reference](https://docs.vaulta.com/apis/leap/latest/trace_api.api).
 

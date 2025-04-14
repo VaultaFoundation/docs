@@ -59,21 +59,21 @@ ctrl-a+d
 
 ## Running the ABI Scan Phase
 
-Below is the initial configuration used for  `eos.config.json` :
+Below is the initial configuration used for  `vaulta.config.json` :
 
 ```bash
 > cd ~/hyperion-history-api/chains
 
-> cp example.config.json eos.config.json
+> cp example.config.json vaulta.config.json
 
-> nano eos.config.json
+> nano vaulta.config.json
 
 {
   "api": {
     "enabled": true,
     "pm2_scaling": 1,
     "node_max_old_space_size": 1024,
-    "chain_name": "EOS Testnet",
+    "chain_name": "Vaulta Testnet",
     "server_addr": "<IP ADDRESS FOR SERVER API>",
     "server_port": 7000,
     "stream_port": 1234,
@@ -133,7 +133,7 @@ Below is the initial configuration used for  `eos.config.json` :
   },
   "settings": {
     "preview": false,
-    "chain": "eos", #SET CHAINS ID#
+    "chain": "vaulta", #SET CHAINS ID#
     "eosio_alias": "eosio",
     "parser": "3.2", #SET TO 1.8 for < 3.1 SHIP#
     "auto_stop": 0,
@@ -232,9 +232,9 @@ This phase may take many hours depending on your hardware and network connectivi
 
 ## Running the Indexing Phase
 
-In this phase the  `eos.config.json`  needs to be amended to disable abi_scan_mode and block batches to be ingested configured. My recommendation is to start with batches of 5000000 to ensure all is being ingested smoothly.
+In this phase the  `vaulta.config.json`  needs to be amended to disable abi_scan_mode and block batches to be ingested configured. My recommendation is to start with batches of 5000000 to ensure all is being ingested smoothly.
 
-Make sure the following is configured or amended in the  `eos.config.json`  :
+Make sure the following is configured or amended in the  `vaulta.config.json`  :
 
 ```bash
 "enable_caching": false, #DISABLED FOR BULK INDEXING#
@@ -274,7 +274,7 @@ http://<SERVER IP ADDRESS>:15672
 
 When the first 5000000 blocks are successfully indexed the indexer will stop and a message will be displayed in the pm2 logs advising  `BLOCK RANGE COMPLETED`.
 
-The indexer block range can now be adjusted in the  `eos.config.json`  for the next batch and then the indexer can be started as before. Depending on how your deployment has managed you may want to increase or decrease this range.
+The indexer block range can now be adjusted in the  `vaulta.config.json`  for the next batch and then the indexer can be started as before. Depending on how your deployment has managed you may want to increase or decrease this range.
 
 ```bash
 "start_on": 5000001,#CONTINUE FROM FIRST BATCH#  
@@ -289,7 +289,7 @@ Bulk indexing can be very heavy on hardware resources and can take days. You wil
 
 When indexing has been completed to as close to the current chain headblock as possible, you can transition to a normal mode of index operation. This phase will enable the live reader, normal block ingestion and caching.
 
-Make sure the following is configured or amended in the  `eos.config.json`  :
+Make sure the following is configured or amended in the  `vaulta.config.json`  :
 
 ```bash
 "enable_caching": true,
@@ -325,7 +325,7 @@ This final phase is running the Hyperion API which has already been configured i
     "enabled": true,
     "pm2_scaling": 1,
     "node_max_old_space_size": 1024,
-    "chain_name": "EOS Testnet",
+    "chain_name": "Vaulta Testnet",
     "server_addr": "<IP ADDRESS FOR SERVER API>",
     "server_port": 7000, 
     "stream_port": 1234,

@@ -86,7 +86,7 @@ It takes four parameters:
 
 Every fungible token has a **symbol** and a **precision**.
 
-The **symbol** is an identifier for the token (like EOS, BTC, or in our case GOLD), and the **precision** is the number of decimal places that the token supports.
+The **symbol** is an identifier for the token (like Vaulta, BTC, or in our case GOLD), and the **precision** is the number of decimal places that the token supports.
 We are going to add a constant variable to our contract to define the `symbol` and `precision` of our token.
 
 Add this above the `issue` action:
@@ -129,7 +129,7 @@ Then, you defined the `balances_table` type which is the definition of a table t
 Later you will use the `balances_table` type to instantiate a reference to the `balances` table, and use that reference to 
 store and retrieve data to/from the blockchain.
 
-The `owner` property is of type `name` (EOS account name) and will be used to identify the account that owns the tokens.
+The `owner` property is of type `name` (Vaulta account name) and will be used to identify the account that owns the tokens.
 The `name` type is a way to pack a string into a 64-bit integer efficiently. It is limited to a-z, 1-5, and a period, and can 
 be up to 12 characters long.
 
@@ -608,8 +608,8 @@ CONTRACT token : public contract {
 
 ## Grab battle tested source code
 
-If you'd like to simply use the source code which is used in most fungible tokens on the EOS Network, you can head over to the
-[eosio.token](https://github.com/eosnetworkfoundation/eos-system-contracts/tree/4702c8f2d95dd06f0924688560b8457962522216/contracts/eosio.token)
+If you'd like to simply use the source code which is used in most fungible tokens on Vaulta, you can head over to the
+[eosio.token](https://github.com/vaultafoundation/eos-system-contracts/tree/4702c8f2d95dd06f0924688560b8457962522216/contracts/eosio.token)
 repository to grab it. Not only is this code battle tested, but it powers the underlying EOS token.
 
 Please note that the standard `eosio.token` contract differs considerably from this tutorial. It is a more complex

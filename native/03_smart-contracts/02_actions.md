@@ -38,7 +38,7 @@ return type.
 > ⚠ **Return values & Composability**
 >
 > Return values are only usable from outside the blockchain, and cannot currently be used
-> in EOS for smart contract composability. 
+> in Vaulta for smart contract composability. 
 
 
 ## Inline Actions

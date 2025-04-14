@@ -4,7 +4,7 @@ title: Third-Party Logging And Tracing Integration
 
 ## Overview
 
-To effectively monitor the performance of your EOS-based blockchain node(s), it is essential to utilize telemetry tools. In the EOS ecosystem, there are two recommended telemetry tools available for integration:
+To effectively monitor the performance of your Vaulta-based blockchain node(s), it is essential to utilize telemetry tools. In the Vaulta ecosystem, there are two recommended telemetry tools available for integration:
 
 * [Deep-mind logger](10_deep-mind-logger.md)
 * [Prometheus monitor and tracer](20_prometheus-monitor.md)

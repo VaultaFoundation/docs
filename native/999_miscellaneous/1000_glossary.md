@@ -30,7 +30,7 @@ A marketing implementation that involves sending free coins or tokens to wallet 
 A method to deploy tokens for dApp developers. Use your personal RAM to receive airgrab tokens.
 
 ## Antelope
-The technology that powers EOS, WAX, Telos, UX, Ultra
+The technology that powers Vaulta
 
 ## API
 Application Programming Interface. A computer interface that enables two computer applications to interact with each other.
@@ -73,7 +73,7 @@ The list of block producers who currently have the possibility of being selected
 Blockchain Producer
 
 ## Byzantine Fault Tolerance
-In the context of distributed systems, Byzantine Fault Tolerance (BFT) is the ability of a distributed computer network to function as desired and correctly reach a sufficient consensus despite malicious components (nodes) of the system failing or propagating incorrect information to other peers. In an EOSIO based blockchain BFT is achieved using a combination of Delegated Proof of Stake, the last irreversible block, and the fact that a producer cannot sign two blocks with the same block number.
+In the context of distributed systems, Byzantine Fault Tolerance (BFT) is the ability of a distributed computer network to function as desired and correctly reach a sufficient consensus despite malicious components (nodes) of the system failing or propagating incorrect information to other peers. In a Vaulta based blockchain BFT is achieved using a combination of Delegated Proof of Stake, the last irreversible block, and the fact that a producer cannot sign two blocks with the same block number.
 **Related**: [Account](#Account)
 
 ## CDT
@@ -86,10 +86,7 @@ A version controlled, fast, transactional database.
 The chain state (or "database" as it is often called) is a memory mapped file, which stores the blockchain state of each block (account details, deferred transactions, transactions, data stored using multi index tables in smart contracts, etc.). Once a block becomes irreversible the chain state is no longer cached.
 
 ## Cleos
-cleos is a command line tool that interfaces with the REST api exposed by nodeos. In other words cleos is the command line tool through which you can interface with an Antelope-based blockchain. cleos is used to deploy and test Antelope smart contracts. cleos contains documentation for all of its commands. For a list of all commands known to cleos, simply run it with no arguments. cleos = command line + eos
-
-## Coalition
-EOS, WAX, Telos, UX (Origin)
+cleos is a command line tool that interfaces with the REST api exposed by nodeos. In other words cleos is the command line tool through which you can interface with an Antelope-based blockchain. cleos is used to deploy and test Antelope smart contracts. cleos contains documentation for all of its commands. For a list of all commands known to cleos, simply run it with no arguments. 
 
 ## Consensus / DPoS
 A large number of participants or stakeholders elect a smaller number of delegates, which in turn make decisions for them.
@@ -142,20 +139,20 @@ A consensus of replicated, shared, and synchronized digital data geographically 
 ## Digital Signature
 A digital signature is a mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature, where the prerequisites are satisfied, gives a recipient very strong reason to believe that the message was created by a known sender (authentication), and that the message was not altered in transit (integrity). Digital signatures are a standard element of most cryptographic protocol suites, and are commonly used for software distribution, financial transactions, contract management software, and in other cases where it is important to detect forgery or tampering.
 
-## Dune
-Docker Utilities for Node Execution. A personal container for Antelope blockchain management, smart contract development, and testing purposes.
-
 ## EA
 Employment Agreement
 
 ## ENF
 EOS Network Foundation
 
-## EOS Blockchain
-EOS is a smart contract blockchain project that is built with Antelope framework.
+## VF 
+Vaulta Foundation
+
+## Vaulta Blockchain
+Vaulta is a smart contract blockchain project that is built with Antelope framework.
 
 ## EOSIO Types
-The EOS source code defines a list of types which ease the developer's work when writing smart contracts, plugins, or when extending the EOS source code. Example types include `account_name`, `permission_name`, `table_name`, `action_name`, `scope_name`, `weight_type`, `public_key`, etc.
+The Vaulta source code defines a list of types which ease the developer's work when writing smart contracts, plugins, or when extending the Vaulta source code. Example types include `account_name`, `permission_name`, `table_name`, `action_name`, `scope_name`, `weight_type`, `public_key`, etc.
 
 ## EOSJS
 A frontend library for javascript development for native mobile applications development, in addition to Swift and Java SDKs. A Javascript API SDK for integration with Antelope-based blockchains using the Antelope RPC API.
@@ -194,7 +191,7 @@ A block is considered irreversible (i.e. immutable) on an Antelope-based blockch
 **Related**: [Account](#Account)
 
 ## Keosd
-keosd is the component that securely stores Antelope keys in wallets. keosd = key + eos
+keosd is the component that securely stores Antelope keys in wallets. 
 
 ## KYC
 Know Your Customer
@@ -220,7 +217,7 @@ Multisig is a short term for multiple signatures. It’s used to describe the ca
 NET is required to store transactions on an Antelope-based blockchain. The amount of NET an account has is measured in bytes, representing the amount of transaction storage an account has at its disposal when creating a new transaction. NET is recalculated after each block is produced, based on the system tokens staked for NET bandwidth by the account. The amount allocated to an account is proportional with the total system tokens staked for NET by all accounts. Do not confuse NET with RAM, although it is also storage space, NET measures the size of the transactions and not contract state.
 
 ## Nodeos
-nodeos is the core Antelope node daemon that can be configured with plugins to run a node. Example uses are block production, dedicated API endpoints, and local development. nodeos = node + eos
+nodeos is the core Antelope node daemon that can be configured with plugins to run a node. Example uses are block production, dedicated API endpoints, and local development.
 
 ## Non-Producing Node
 A full node running nodeos that is only watching and verifying for itself each block, and maintaining its own local full copy of the blockchain. A non-producing node that is in the "standby pool" can, through the process of being voted in, become a Producing Node. A producing node, if voted out, will become a non-producing node. For large Antelope changes, non-producing nodes are outside the realm of the "standby pool".

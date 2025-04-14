@@ -2,7 +2,7 @@
 title: Assertions
 ---
 
-Like every program, bugs can occur and user input must be validated. EOS++ provides a clear cut way to do this.
+Like every program, bugs can occur and user input must be validated. Vaulta provides a clear cut way to do this.
 
 ## Reverting state
 
@@ -12,7 +12,7 @@ persisted data / tables will be reverted as if the transaction never happened.
 
 ## Check
 
-The `check` function is how you validate conditions in EOS++. 
+The `check` function is how you validate conditions in Vaulta. 
 The function will check that the specified condition is true, and if it is not, the transaction will fail.
 
 ```cpp
@@ -37,7 +37,7 @@ check(false, "This contract is: " + thisContract.to_string());
 #### Logging `asset`
 
 ```cpp
-asset myAsset = asset(100, symbol("EOS", 4));
+asset myAsset = asset(100, symbol("VAULTA", 4));
 check(false, "My asset is: " + myAsset.to_string());
 ```
 

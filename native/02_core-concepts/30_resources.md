@@ -2,29 +2,27 @@
 title: Resources
 ---
 
-The EOS blockchain relies on three system resources: `CPU`, `NET` and `RAM`. Every EOS account needs system 
+The Vaulta blockchain relies on three system resources: `CPU`, `NET` and `RAM`. Every Vaulta account needs system 
 resources to interact with smart contracts deployed on the blockchain.
 
 ## RAM
 
 RAM, just like in a computer, is a limited resource. It is a fast memory storage space that is used by the blockchain to store data.
-Unlike your computer which has eventual persistence to a hard drive, the EOS blockchain stores all of its data in RAM.
+Unlike your computer which has eventual persistence to a hard drive, the Vaulta blockchain stores all of its data in RAM.
 
 Because of this, RAM is a very limited and in-demand resource. Every piece of state data that is stored on the blockchain
 must be stored in RAM. This includes account balances, contract code, and contract data.
 
-RAM can be purchased and sold by users on the EOS blockchain. The price of RAM is determined by a Bancor algorithm
+RAM can be purchased and sold by users on the Vaulta blockchain. The price of RAM is determined by a Bancor algorithm
 that is implemented in the system contract. The price of RAM is determined by the amount of free RAM available. The less
 free RAM available, the more expensive it is to buy RAM.
 
-You can also sell RAM you are no longer using back to the system contract, in order to reclaim your EOS and free up RAM for other users.
+You can also sell RAM you are no longer using back to the system contract, in order to reclaim your Vaulta and free up RAM for other users.
 
 
 ### Buying RAM
 
-The `eosio` system contracts provides the `buyram` and `buyrambytes` actions to buy RAM. The `buyram` action buys RAM in EOS, while the `buyrambytes` action buys RAM in bytes.
-
-If you want a quick way to buy RAM from any wallet, you can **send any amount of EOS to the `buyramforeos` account**, and it will send you back the equivalent amount of RAM.
+The `core.vaulta` system contracts provides the `buyram` and `buyrambytes` actions to buy RAM. The `buyram` action buys RAM in Vaulta, while the `buyrambytes` action buys RAM in bytes.
 
 <details>
     <summary>Want to know how the RAM price is calculated?</summary>
@@ -32,7 +30,7 @@ If you want a quick way to buy RAM from any wallet, you can **send any amount of
 The necessary RAM needed for a smart contract to store its data is calculated from the used blockchain state.
 
 As a developer, to understand the amount of RAM your smart contract needs, pay attention to the data structure underlying the multi-index tables your smart contract instantiates and uses. The data structure underlying one multi-index table defines a row in the table. Each data member of the data structure corresponds with a row cell of the table.
-To approximate the amount of RAM one multi-index row needs to store on the blockchain, you have to add the size of the type of each data member and the memory overheads for each of the defined indexes, if any. Find below the overheads defined by the EOS code for multi-index tables, indexes, and data types:
+To approximate the amount of RAM one multi-index row needs to store on the blockchain, you have to add the size of the type of each data member and the memory overheads for each of the defined indexes, if any. Find below the overheads defined by the Vaulta code for multi-index tables, indexes, and data types:
 
 <br />
 
@@ -48,7 +46,7 @@ To approximate the amount of RAM one multi-index row needs to store on the block
 
 ## CPU & NET
 
-Both CPU and NET are crucial resources that every EOS account needs in order to interact with the blockchain.
+Both CPU and NET are crucial resources that every Vaulta account needs in order to interact with the blockchain.
 
 ### CPU
 
@@ -63,7 +61,7 @@ The amount of CPU available to an account is measured in microseconds.
     <summary>Want to know how CPU is calculated?</summary>
 
 Transactions executed by the blockchain contain one or more actions. Each transaction must consume an amount of CPU
-within the limits predefined by the minimum and maximum transaction CPU usage values. For EOS blockchain these limits
+within the limits predefined by the minimum and maximum transaction CPU usage values. For Vaulta these limits
 are set in the blockchain's configuration. You can find out these limits by running the following command and consult
 the `min_transaction_cpu_usage` and the `max_transaction_cpu_usage` which are expressed in microseconds.
 
@@ -85,7 +83,7 @@ NET is a resource that is consumed based on the network bandwidth used by a tran
 <details>
     <summary>Want to know how NET is calculated?</summary>
 
-Each transaction must consume an amount of NET which can not exceed the predefined maximum transaction NET usage value. For EOS blockchain this limit is set in the blockchain's configuration. You can find out this limit by running the following command and consult the `max_transaction_net_usage` which is expressed in bytes.
+Each transaction must consume an amount of NET which can not exceed the predefined maximum transaction NET usage value. For Vaulta blockchain this limit is set in the blockchain's configuration. You can find out this limit by running the following command and consult the `max_transaction_net_usage` which is expressed in bytes.
 
 <br />
 
@@ -104,29 +102,27 @@ For the accounts that execute transactions, the blockchain calculates and update
 
 ### Powering up
 
-CPU & NET can be powered up on an EOS account by using the system actions. This costs EOS, and will give you an amount of CPU & NET
-that is proportional to the amount of EOS you spend, for a specified period of time.
-
-There are also free services like [EOS PowerUp](https://eospowerup.io) that will allow you to power up CPU & NET for free once 
-per day.
+CPU & NET can be powered up on an Vaulta account by using the system actions. This costs Vaulta, and will give you an amount of CPU & NET
+that is proportional to the amount of Vaulta you spend, for a specified period of time.
 
 <details>
     <summary>See detailed information about how to PowerUp manually</summary>
 
-To power up an account is a technique to rent CPU & NET resources from the PowerUp resource model. A smart contract implements this model on the blockchain and allocates these resources to the account of your choice. The action to power up an account is `powerup`. It takes as parameters:
+To power up an account is a technique to rent CPU & NET resources from the PowerUp resource model. A smart contract implements 
+this model on the blockchain and allocates these resources to the account of your choice. The action to power up an account is `powerup`. It takes as parameters:
 
 <br />
 
-* The `payer` of the fee, must be a valid EOS account.
-* The `receiver` of the resources, must be a valid EOS account.
-* The `days` which must always match `state.powerup_days` specified in the [PowerUp configuration settings](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/7cec470b17bd53b8c78465d4cbd889dbaf1baffb/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L588).
-* The `net_frac`, and the `cpu_frac` are the percentage of the resources that you need. The easiest way to calculate the percentage is to multiple 10^15 (100%) by the desired percentage. For example: 10^15 * 0.01 = 10^13.
-* The `max_payment`, must be expressed in EOS and is the maximum amount the `payer` is willing to pay.
+* The `payer` of the fee, must be a valid Vaulta account.
+* The `receiver` of the resources, must be a valid Vaulta account.
+* The `days` which must always match `state.powerup_days` specified in the [PowerUp configuration settings](https://github.com/vaultafoundation/eos-system-contracts/blob/7cec470b17bd53b8c78465d4cbd889dbaf1baffb/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L588).
+* The `net_frac`, and the `cpu_frac` are the percentage of the resources that you need. The easiest way to calculate the percentage is to multiply 10^15 (100%) by the desired percentage. For example: 10^15 * 0.01 = 10^13.
+* The `max_payment`, must be expressed in Vaulta and is the maximum amount the `payer` is willing to pay.
 
 <br />
 
 ```sh
-cleos push action eosio powerup '[user, user, 1, 10000000000000, 10000000000000, "1000.0000 EOS"]' -p user
+cleos push action core.vaulta powerup '[user, user, 1, 10000000000000, 10000000000000, "1000.0000 VAULTA"]' -p user
 ```
 
 <br />
@@ -146,7 +142,8 @@ executed transaction: 82b7124601612b371b812e3bf65cf63bb44616802d3cd33a2c0422b583
 
 <br />
 
-The PowerUp resource model on the EOS blockchain is initialized with `"powerup_days": 1,`. This setting permits the maximum period to rent CPU and NET for 24 hours. If you do not use the resources within the 24 hour interval, the rented CPU and NET expires.
+The PowerUp resource model on the Vaulta blockchain is initialized with `"powerup_days": 1,`. This setting permits the maximum 
+period to rent CPU and NET for 24 hours. If you do not use the resources within the 24 hour interval, the rented CPU and NET expires.
 
 <br />
 
@@ -156,7 +153,10 @@ The resources in loans that expire are not automatically reclaimed by the system
 
 <br />
 
-Any calls to the `powerup` action does process also this queue (limited to two expired loans at a time). Therefore, the expired loans are automatically processed in a timely manner. Sometimes, it may be necessary to manually process expired loans in the queue to release resources back to the system, which reduces prices. Therefore, any account may process up to an arbitrary number of expired loans if it calls the `powerupexec` action.
+Any calls to the `powerup` action does process also this queue (limited to two expired loans at a time). Therefore, the expired 
+loans are automatically processed in a timely manner. Sometimes, it may be necessary to manually process expired loans in the 
+queue to release resources back to the system, which reduces prices. Therefore, any account may process up to an arbitrary 
+number of expired loans if it calls the `powerupexec` action.
 
 <br />
 
@@ -193,7 +193,7 @@ Example `powerupexec` call:
 <br />
 
 ```sh
-cleos push action eosio powerupexec '[user, 2]' -p user
+cleos push action core.vaulta powerupexec '[user, 2]' -p user
 ```
 
 <br />

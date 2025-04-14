@@ -4,7 +4,7 @@ title: Prometheus Integration
 
 ## Overview
 
-EOS supports the prometheus plugin which allows data tracing and collection by Prometheus (https://prometheus.io/) of various internal nodeos metrics.
+Vaulta supports the prometheus plugin which allows data tracing and collection by Prometheus (https://prometheus.io/) of various internal nodeos metrics.
 
 Supported metrics are :
 

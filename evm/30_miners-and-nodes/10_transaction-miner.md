@@ -75,7 +75,7 @@ The recommended version is [`18.16.0`](https://nodejs.org/en/download), and the 
 #### Get the miner from GitHub and inst all dependencies
 
 ```bash
-git clone https://github.com/eosnetworkfoundation/eos-evm-miner.git
+git clone https://github.com/vaultafoundation/eos-evm-miner.git
 cd eos-evm-miner
 yarn
 ```

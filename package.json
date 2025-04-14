@@ -4,12 +4,12 @@
   "description": "This repository contains the source of truth for the EOS Network documentation.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eosnetworkfoundation/docs.git"
+    "url": "git+https://github.com/vaultafoundation/docs.git"
   },
   "author": "EOS Network Foundation",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eosnetworkfoundation/docs/issues"
+    "url": "https://github.com/vaultafoundation/docs/issues"
   },
   "homepage": "https://docs.eosnetwork.com",
   "devDependencies": {

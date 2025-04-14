@@ -34,7 +34,7 @@ To use a custom `config.ini` file, specify its filename by passing the `--config
 access-control-allow-origin = *
 
 # The name supplied to identify this node amongst the peers. (eosio::net_plugin)
-agent-name = "EOS Test Agent"
+agent-name = "Vaulta Test Agent"
 
 # Enable block production, even if the chain is stale. (eosio::producer_plugin)
 enable-stale-production = true
@@ -44,13 +44,13 @@ producer-name = eosio
 
 # Key=Value pairs in the form <public-key>=<provider-spec>
 # Where:
-#    <public-key>    	is a string form of a vaild EOSIO public key
+#    <public-key>    	is a string form of a vaild Vaulta public key
 # 
 #    <provider-spec> 	is a string in the form <provider-type>:<data>
 # 
 #    <provider-type> 	is KEY, KEOSD, or SE
 # 
-#    KEY:<data>      	is a string form of a valid EOSIO private key which maps to the provided public key
+#    KEY:<data>      	is a string form of a valid Vaulta private key which maps to the provided public key
 # 
 #    KEOSD:<data>    	is the URL where keosd is available and the approptiate wallet(s) are unlocked
 # 
@@ -159,7 +159,7 @@ Alternatively, it can be restricted to a specific origin:
 Access-Control-Allow-Origin: https://sample.io
 ```
 
-> ℹ️ In the context of blockchain applications running as web dApps, `nodeos` provides the `access-control-allow-origin` option to control access from other origins. This option can be used by an EOS API node, for instance, to grant access to selected remote hosts.
+> ℹ️ In the context of blockchain applications running as web dApps, `nodeos` provides the `access-control-allow-origin` option to control access from other origins. This option can be used by an Vaulta API node, for instance, to grant access to selected remote hosts.
 
 ## Summary
 

@@ -6,4 +6,4 @@ title: Plugins
 
 To learn more about a specific plugin, select it from the left navigation menu.
 
-> ℹ️ `nodeos` plugins provide incremental functionality to the EOS core blockchain. In contrast to runtime plugins, `nodeos` plugins are built and baked into the `nodeos` binary during the compilation process.
+> ℹ️ `nodeos` plugins provide incremental functionality to the Vaulta core blockchain. In contrast to runtime plugins, `nodeos` plugins are built and baked into the `nodeos` binary during the compilation process.

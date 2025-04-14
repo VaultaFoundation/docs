@@ -341,8 +341,8 @@ The below example  `connections.json`  is configured for an Antelope Testnet, am
     "port": "6379"
   },
   "chains": {
-    "eos": {
-      "name": "EOS Testnet",
+    "vaulta": {
+      "name": "Vaulta Testnet",
       "chain_id": "g17b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a14",
       "http": "http://<NODEOS API IP ADDRESS>:8888",
       "ship": "ws://<NODEOS SHIP IP ADDRESS>:8080",
@@ -357,7 +357,7 @@ The below example  `connections.json`  is configured for an Antelope Testnet, am
 **.config.json**
 
 
-The  `.config.json`  file is named to reflect the chains name in this case  `eos.config.json`. The configuration as before needs to be adjusted to suit your own config and deployment using the provided example as a base.
+The  `.config.json`  file is named to reflect the chains name in this case  `vaulta.config.json`. The configuration as before needs to be adjusted to suit your own config and deployment using the provided example as a base.
 
 There are three phases when starting a new Hyperion Indexer, the first phase is what is called the “ABI Scan” which is the default mode in the software provided  `example.config.json`.
 
@@ -368,16 +368,16 @@ Configure as below, take note of the **#UPDATE#** parameters
 ```bash
 > cd ~/hyperion-history-api/chains
 
-> cp example.config.json eos.config.json
+> cp example.config.json vaulta.config.json
 
-> nano eos.config.json
+> nano vaulta.config.json
 
 {
   "api": {
     "enabled": true,
     "pm2_scaling": 1,
     "node_max_old_space_size": 1024,
-    "chain_name": "EOS Testnet", #UPDATE#
+    "chain_name": "Vaulta Testnet", #UPDATE#
     "server_addr": "<IP ADDRESS FOR SERVER API>", #UPDATE#
     "server_port": 7000,
     "stream_port": 1234,
@@ -437,7 +437,7 @@ Configure as below, take note of the **#UPDATE#** parameters
   },
   "settings": {
     "preview": false,
-    "chain": "eos", #SET CHAINS ID#
+    "chain": "vaulta", #SET CHAINS ID#
     "eosio_alias": "eosio",
     "parser": "3.2", #SET TO 1.8 for < 3.1 SHIP#
     "auto_stop": 0,

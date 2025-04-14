@@ -1,9 +1,9 @@
 ---
-title: Quickstart
+title: Write a Contract
 --- 
 
 In this guide we're going to create a simple smart contract that will allow us to store a string in the blockchain.
-This will teach you some of the basics of smart contract development on the EOS network.
+This will teach you some of the basics of smart contract development on Vaulta.
 
 ## Create your first Smart Contract
 
@@ -11,7 +11,7 @@ You can think of a Smart Contract like a function that runs on the blockchain. I
 that it will always produce the same output given the same input. This is required so that all nodes on the network
 can agree on the output of the function.
 
-Open up the [EOS Web IDE](https://ide.eosnetwork.com/) in your browser. You will be presented with a
+Open up the [Vaulta Web IDE](https://ide.vaulta.com/) in your browser. You will be presented with a
 dummy contract which shows you the basic structure of a smart contract.
 
 Go ahead and clear everything out of the editor, and copy and paste the following code:
@@ -31,7 +31,7 @@ CONTRACT mycontract : public contract {
       uint64_t primary_key() const { return id; }
     };
     
-    using storage_table = eosio::multi_index<"mytable"_n, StoredData>;
+    using storage_table = multi_index<"mytable"_n, StoredData>;
 
     ACTION save( uint64_t id, std::string text ) {
       storage_table _storage( get_self(), get_self().value );
@@ -56,6 +56,6 @@ section to learn more about the various parts of a smart contract and how they w
 
 Your screen should look like this now:
 
-![EOS Web IDE](/images/native-web-ide-basics.png)
+![Vaulta Web IDE](/images/native-web-ide-basics.png)
 
 Head over to the next section to see how we can deploy this to a testnet with a few clicks.

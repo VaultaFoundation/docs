@@ -2,14 +2,14 @@
 title: Accounts
 ---
 
-An EOS account is a digital container for holding EOS tokens, resources, permissions, and more. 
+A Vaulta account is a digital container for holding Vaulta tokens, resources, permissions, and more. 
 
 Smart Contracts are also deployed on top of accounts, and the account owner can control the smart contract unless
 control is relinquished.
 
 ## Account names
 
-EOS accounts have human-readable names. 
+Vaulta accounts have human-readable names. 
 
 However, in order to keep account names efficient on the blockchain, a few restrictions apply: 
 
@@ -19,13 +19,13 @@ However, in order to keep account names efficient on the blockchain, a few restr
 * Names cannot start with a number or a period. 
 * Names cannot end with a period.
 
-Periods have a special meaning for EOS accounts. They specify that an account has a **suffix** (similar to a top-level domain like .com), also known as a **premium name**. Accounts with a suffix can only be created by the **suffix owner**. 
+Periods have a special meaning for Vaulta accounts. They specify that an account has a **suffix** (similar to a top-level domain like .com), also known as a **premium name**. Accounts with a suffix can only be created by the **suffix owner**. 
 
 For instance, if someone owns the suffix `.bar` then only that person can create `foo.bar`. 
  
 ### Regex Validation
 
-The following regex can be used to validate an EOS account name: 
+The following regex can be used to validate a Vaulta account name: 
 
 ```regex
 (^[a-z1-5.]{1,11}[a-z1-5]$)|(^[a-z1-5.]{12}[a-j1-5]$)
@@ -33,7 +33,7 @@ The following regex can be used to validate an EOS account name:
 
 ## Public/private keys
 
-Every EOS account is ultimately controlled by a key pair (public and corresponding private key).
+Every Vaulta account is ultimately controlled by a key pair (public and corresponding private key).
 While the public key is used to identify the account on the blockchain and can be publicly known, the private key which is used 
 to sign each transaction must be kept secret at all times.
 
@@ -51,7 +51,7 @@ Examples of private and public keys:
 
 ## Permissions system
 
-EOS offers extra security mechanisms for accounts out of the box, using what we call the *permissions system*.
+Vaulta offers extra security mechanisms for accounts out of the box, using what we call the *permissions system*.
 
 Each account has a set of hierarchical permissions that control what that account can do, and comes with two base permissions by default. These two permissions cannot be removed as they are required for your account to function properly. 
 
@@ -107,13 +107,13 @@ Every account has the ability to have one single smart contract deployed to it, 
 updated and replaced at will. 
 
 
-## Creating accounts costs EOS
+## Creating accounts costs Vaulta
 
-Because RAM is a limited resource, creating an account requires you to spend EOS to buy the RAM needed to store the
+Because RAM is a limited resource, creating an account requires you to spend Vaulta to buy the RAM needed to store the
 account's data. This means that in order to create an account, someone else who already has an account must
 create it for you.
 
-Most EOS wallets will allow you to create an account for yourself, but will require you to pay for the RAM needed to
+Most Vaulta wallets will allow you to create an account for yourself, but will require you to pay for the RAM needed to
 store your account. Some wallets will pay for the RAM for you, but will require you to pay them back at a later date.
 
 > 💰 **Current costs**

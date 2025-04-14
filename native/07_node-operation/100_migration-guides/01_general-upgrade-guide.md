@@ -84,13 +84,13 @@ Here are some tips for speeding up replays:
 
 #### List of peer nodes with blocks.log files extending to genesis:
 ```bash
-EOS:
+Vaulta:
 eos.seed.eosnation.io:9876
 peer1.eosphere.io:9876
 peer2.eosphere.io:9876
 p2p.genereos.io:9876
 
-EOS Jungle4 Testnet:
+Jungle4 Testnet:
 peer1-jungle4.eosphere.io:9876
 jungle4.seed.eosnation.io:9876
 jungle4.genereos.io:9876

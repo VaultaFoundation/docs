@@ -6,7 +6,7 @@ title: Staking
     <title>Staking</title>
 </head>
 
-Learn about how EOS Staking works on EOS on a technical level.
+Learn about how Vaulta Staking works on a technical level.
 
 - [Overview](./01_overview.md)
 - [Contracts](./10_contracts.md)

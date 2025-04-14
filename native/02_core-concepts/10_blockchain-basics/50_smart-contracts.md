@@ -23,7 +23,7 @@ What a smart contract can do, is entirely up to your imagination.
 
 ## Are smart contracts immutable?
 
-In EOS, smart contracts have the _possibility_ of being immutable, but it is not the default.
+In Vaulta, smart contracts have the _possibility_ of being immutable, but it is not the default.
 
 As long as you retain control of the account that the smart contract is deployed to, you may update the smart contract
 at any time. This is useful for fixing bugs, or adding new features to your smart contract.

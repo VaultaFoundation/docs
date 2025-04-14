@@ -3,7 +3,7 @@ title: db_size_api_plugin
 dont_translate_title: true
 ---
 
-See [DB Size API Reference](https://docs.eosnetwork.com/apis/leap/latest/db_size.api/).
+See [DB Size API Reference](https://docs.vaulta.com/apis/leap/latest/db_size.api/).
 
 ## Overview
 

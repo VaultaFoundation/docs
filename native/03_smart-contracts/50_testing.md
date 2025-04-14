@@ -2,9 +2,9 @@
 title: Testing
 ---
 
-The easiest way to test EOS Smart Contracts is using VeRT (VM emulation RunTime for WASM-based blockchain contracts).
+The easiest way to test Vaulta Smart Contracts is using VeRT (VM emulation RunTime for WASM-based blockchain contracts).
 
-It is a JavaScript library that allows you to run EOS smart contracts in a Node.js environment.
+It is a JavaScript library that allows you to run Vaulta smart contracts in a Node.js environment.
 You use it along-side other testing libraries like Mocha, Chai, and Sinon.
 
 This guide will use Mocha as the testing framework, and assumes you already know how mocha works, as well as JavaScript.
@@ -20,7 +20,7 @@ We're going to install
 - Chai
 
 ```shell
-npm install -D @eosnetwork/vert mocha chai
+npm install -D @vaulta/vert mocha chai
 ```
 
 You should also add `"type": "module"` to your `package.json`. 
@@ -44,7 +44,7 @@ Your `package.json` will look something like this now:
     "test": "mocha tests/**/*.spec.js"
   },
   "devDependencies": {
-    "@eosnetwork/vert": "^0.3.24",
+    "@vaulta/vert": "^0.3.24",
     "chai": "^4.3.10",
     "mocha": "^10.2.0"
   }
@@ -62,7 +62,7 @@ Let's look at how to import our dependencies, setup the emulator and some accoun
 ```javascript
 // tests/mycontract.spec.js
 
-import { Blockchain, nameToBigInt, expectToThrow } from "@eosnetwork/vert";
+import { Blockchain, nameToBigInt, expectToThrow } from "@vaulta/vert";
 import { assert } from "chai";
 
 // instantiate the blockchain emulator

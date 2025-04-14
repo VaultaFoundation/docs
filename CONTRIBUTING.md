@@ -8,7 +8,7 @@ If you're looking for a place to start, consider [taking an item from our backlo
 that doesn't have a `🔥 crit` priority (we usually take those in our upcoming iteration)
 
 Some ways you can contribute:
-- [Reporting an issue](https://github.com/eosnetworkfoundation/docs/issues)
+- [Reporting an issue](https://github.com/vaultafoundation/docs/issues)
 - [Creating new documents](#creating-a-new-document)
 - Updating existing documents (same process as creating a new document)
 
@@ -24,7 +24,7 @@ Some ways you can contribute:
 ## Creating a new document
 
 Here is the process for creating a new document:
-- [Fork the repository](https://github.com/eosnetworkfoundation/docs/fork)
+- [Fork the repository](https://github.com/vaultafoundation/docs/fork)
 - Switch to the `staging` branch (`git checkout staging`)
 - Create a new branch (`git checkout -b doc/my-new-document`)
 - Create your document in the `native` or `evm`

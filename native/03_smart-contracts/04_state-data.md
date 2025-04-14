@@ -12,14 +12,14 @@ one has its own use case.
 
 ## Data Models
 
-A model is a data structure that you will be storing in an EOS++ table. It is a serializable C++ struct, and can contain 
+A model is a data structure that you will be storing in a Vaulta table. It is a serializable C++ struct, and can contain 
 any data type that is also serializable. All common data types are serializable, and you can also create your own
 serializable data types, such as other models that start with the `TABLE` keyword.
 
 ```cpp
 TABLE UserModel {
     uint64_t id;
-    name eos_account;
+    name account;
     
     uint64_t primary_key() const { return id; }
 };
@@ -70,7 +70,7 @@ You also cannot have an account that isn't part of the transaction's authorizati
 
 > 💰 **Beware of RAM**
 >
-> RAM is a limited resource on the EOS blockchain, and you should be careful about how much RAM you allow others to use on
+> RAM is a limited resource on the Vaulta blockchain, and you should be careful about how much RAM you allow others to use on
 > your contracts. It's often better to make the user pay for the RAM, but this requires that you create incentives for them
 > to spend their own RAM in return for something of perceived equal or greater value.
 
@@ -88,17 +88,17 @@ If we were to imagine the database as a `JSON` object, it might look like this:
         1: [
             {
                 "id": 1,
-                "eos_account": "bob"
+                "account": "bob"
             },
             {
                 "id": 2,
-                "eos_account": "sally"
+                "account": "sally"
             }
         ],
         2: [
             {
                 "id": 1,
-                "eos_account": "joe"
+                "account": "joe"
             }
         ]
     }
@@ -114,7 +114,7 @@ As you can see above, you can have the same primary key in different scopes with
 
 ## Multi-Index Table
 
-The multi-index table is the most common way to store data on the EOS blockchain. It is a persistent key-value store that
+The multi-index table is the most common way to store data on the Vaulta blockchain. It is a persistent key-value store that
 can be indexed in multiple ways, but always has a primary key. Going back to the NoSQL database analogy, you can think
 of the multi-index table as a collection of documents, and each index as a different way to query or fetch data from the collection.
 
@@ -156,7 +156,7 @@ function, which takes a lambda/anonymous function that accepts a reference to th
 name ramPayer = thisContract;
 users.emplace(ramPayer, [&](auto& row) {
     row.id = 1;
-    row.eos_account = name("eosio");
+    row.account = name("vaulta");
 });
 ```
 
@@ -165,7 +165,7 @@ You can also define a model first, and insert it into the entire row.
 ```cpp
 UserModel user = {
     .id = 1,
-    .eos_account = name("eosio")
+    .account = name("vaulta")
 };
 
 users.emplace(ramPayer, [&](auto& row) {
@@ -209,7 +209,7 @@ and a lambda/anonymous function that allows us to modify the data.
 
 ```cpp
 users.modify(iterator, same_payer, [&](auto& row) {
-    row.eos_account = name("foobar");
+    row.account = name("foobar");
 });
 ```
 
@@ -232,7 +232,7 @@ users.erase(iterator);
 ### Using a secondary index
 
 Using a secondary index will allow you to query your table in a different way. For example, if you wanted to query your
-table by the `eos_account` field, you will need to create a secondary index on that field.
+table by the `account` field, you will need to create a secondary index on that field.
 
 #### Redefining our model and table
 
@@ -242,10 +242,10 @@ in the name of the index, and the type of the index.
 ```cpp
 TABLE UserModel {
     uint64_t id;
-    name eos_account;
+    name account;
 
     uint64_t primary_key() const { return id; }
-    uint64_t account_index() const { return eos_account.value; }
+    uint64_t account_index() const { return account.value; }
 };
 
 using users_table = multi_index<"users"_n, UserModel,
@@ -285,7 +285,7 @@ then use the `find` method on the index, instead of using it directly on the tab
 
 ```cpp
 auto index = users.get_index<"byaccount"_n>();
-auto iterator = index.find(name("eosio").value);
+auto iterator = index.find(name("vaulta").value);
 ```
 
 To modify data in the table using the secondary index, you use the `modify` method on the index, instead of using it
@@ -293,7 +293,7 @@ directly on the table.
 
 ```cpp
 index.modify(iterator, same_payer, [&](auto& row) {
-    row.eos_account = name("foobar");
+    row.account = name("foobar");
 });
 ```
 

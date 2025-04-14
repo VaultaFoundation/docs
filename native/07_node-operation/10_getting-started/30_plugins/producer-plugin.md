@@ -7,7 +7,7 @@ dont_translate_title: true
 
 The `producer_plugin` contains functionality for a node to perform the task of block production. It also implements the core functionality provided by the [Producer API plugin](./producer-api-plugin.md).
 
-> ℹ️ To enable block production, a particular `nodeos` configuration is necessary. Refer to the [Configuring Block Producing Node](https://docs.eosnetwork.com/manuals/leap/latest/nodeos/usage/node-setups/producing-node) guide for detailed instructions.
+> ℹ️ To enable block production, a particular `nodeos` configuration is necessary. Refer to the [Configuring Block Producing Node](https://docs.vaulta.com/manuals/leap/latest/nodeos/usage/node-setups/producing-node) guide for detailed instructions.
 
 ## Usage
 
@@ -33,7 +33,7 @@ Option (=default) | Description
 `--max-transaction-time arg (=30)` | Limits the maximum time (in milliseconds) that is allowed a pushed transaction's code to execute before being considered invalid
 `--max-irreversible-block-age arg (=-1)` | Limits the maximum age (in seconds) of the DPOS Irreversible Block for a chain this node will produce blocks on (use negative value to indicate unlimited)
 `-p [ --producer-name ] arg` | ID of producer controlled by this node (e.g. inita; may specify multiple times)
-`--signature-provider arg (=<PUBLIC_KEY>=KEY:<PRIVATE_KEY>)` | Key=Value pairs in the form ^public-key^=^provider-spec^ Where: ^public-key^    is a string form of a vaild EOSIO public key ^provider-spec^ is a string in the form ^provider-type^ :^data^ ^provider-type^ is KEY, KEOSD, or SE KEY:^data^      is a string form of a valid EOSIO private key which maps to the provided public key KEOSD:^data^    is the URL where keosd is available and the approptiate wallet(s) are unlocked
+`--signature-provider arg (=<PUBLIC_KEY>=KEY:<PRIVATE_KEY>)` | Key=Value pairs in the form ^public-key^=^provider-spec^ Where: ^public-key^    is a string form of a vaild Vaulta public key ^provider-spec^ is a string in the form ^provider-type^ :^data^ ^provider-type^ is KEY, KEOSD, or SE KEY:^data^      is a string form of a valid Vaulta private key which maps to the provided public key KEOSD:^data^    is the URL where keosd is available and the approptiate wallet(s) are unlocked
 `--greylist-account arg` | account that can not access to extended CPU/NET virtual resources
 `--greylist-limit arg (=1000)` | Limit (between 1 and 1000) on the multiple that CPU/NET virtual resources can extend during low usage (only enforced subjectively; use 1000 to not enforce any limit)
 `--produce-time-offset-us arg (=0)` | Offset of non last block producing time in microseconds. Valid range 0 .. -block_time_interval.
@@ -89,4 +89,4 @@ plugin = eosio::chain_plugin [operations] [options]
 nodeos ... --plugin eosio::chain_plugin [operations] [options]
 ```
 
-For details about how blocks are produced please read the following [block producing explainer](https://docs.eosnetwork.com/manuals/leap/latest/nodeos/plugins/producer_plugin/block-producing-explained).
+For details about how blocks are produced please read the following [block producing explainer](https://docs.vaulta.com/manuals/leap/latest/nodeos/plugins/producer_plugin/block-producing-explained).

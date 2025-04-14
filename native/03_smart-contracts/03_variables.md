@@ -3,9 +3,9 @@ title: Variables
 ---
 
 Defining variables is a fundamental part of any programming language. In this section, we will look at
-the different types of variables you can define in EOS Smart Contracts.
+the different types of variables you can define in Vaulta Smart Contracts.
 
-C++ supports a wide range of data types. EOS++ extends the set of types with EOS-specific types.
+C++ supports a wide range of data types. Vaulta extends the set of types with Vaulta-specific types.
 
 ## Defining variables
 
@@ -117,7 +117,7 @@ Hash types are used to represent cryptographic hashes such as SHA-256.
 
 ## Custom types
 
-These are the custom types that come built-in with EOS++. You will likely use some of these types often in your EOS Smart Contracts.
+These are the custom types that come built-in with Vaulta. You will likely use some of these types often in your Vaulta Smart Contracts.
 
 ### Name type
 
@@ -140,7 +140,7 @@ uint64_t b = a.value;
 ### Key and Signature types
 
 The `public_key` and `signature` types are used to represent cryptographic keys and signatures, and are
-also an EOS++ specific type.
+also a Vaulta specific type.
 
 #### Required Header
 
@@ -277,7 +277,7 @@ symbol mySymbol = symbol("ISTOOLONG", 4);
 Structs are used to represent complex data. They are similar to classes, but are simpler and more lightweight. Think of a
 `JSON` object.
 
-You can use these in EOS++, but if you are storing them in a table you should use the `TABLE` keyword which we will discuss in the 
+You can use these in Vaulta, but if you are storing them in a table you should use the `TABLE` keyword which we will discuss in the 
 [next section](/docs/03_smart-contracts/04_state-data.md).
 
 ```cpp

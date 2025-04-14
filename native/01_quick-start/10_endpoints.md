@@ -2,7 +2,7 @@
 title: Endpoints
 ---
 
-<head><title>EOS Native Endpoints</title></head>
+<head><title>Vaulta Endpoints</title></head>
 
-To find a list of all the available endpoints for the EOS Network, 
+To find a list of all the available endpoints for Vaulta, 
 please visit [Antelope Tools](https://eos.antelope.tools/endpoints).
