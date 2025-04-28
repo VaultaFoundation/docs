@@ -105,7 +105,7 @@ The system contract has a few tables that are relevant to staking.
 
 #### rexbal
 
-[The `rexbal` table](https://unicove.com/en/eos/contract/eosio/tables/rexbal) holds information about staked balances for users.
+[The `rexbal` table](https://unicove.com/contract/eosio/tables/rexbal) holds information about staked balances for users.
 
 - `version`
 - `owner`
@@ -116,7 +116,7 @@ The system contract has a few tables that are relevant to staking.
 
 #### rexfund
 
-[The `rexfund` table](https://unicove.com/en/eos/contract/eosio/tables/rexfund)
+[The `rexfund` table](https://unicove.com/contract/eosio/tables/rexfund)
 holds information about the deposited but unstaked EOS funds for users. 
 
 - `version`
@@ -125,7 +125,7 @@ holds information about the deposited but unstaked EOS funds for users.
 
 #### rexmaturity
 
-[The `rexmaturity` table](https://unicove.com/en/eos/contract/eosio/tables/rexmaturity)
+[The `rexmaturity` table](https://unicove.com/contract/eosio/tables/rexmaturity)
 holds information about the maturity dates of REX tokens for users.
 
 - `num_of_maturity_buckets` - The number of days until a position fully matures
@@ -134,7 +134,7 @@ holds information about the maturity dates of REX tokens for users.
 
 #### rexpool
 
-[The `rexpool` table](https://unicove.com/en/eos/contract/eosio/tables/rexpool)
+[The `rexpool` table](https://unicove.com/contract/eosio/tables/rexpool)
 holds information about the staking pool.
 
 - `version`
@@ -174,7 +174,7 @@ If you'd like to view full code for this example, [see here](https://github.com/
 
 #### rexretpool
 
-[The `rexretpool` table](https://unicove.com/en/eos/contract/eosio/tables/rexretpool)
+[The `rexretpool` table](https://unicove.com/contract/eosio/tables/rexretpool)
 holds information about the return pool for REX tokens.
 
 - `version`
@@ -187,11 +187,11 @@ holds information about the return pool for REX tokens.
 
 ## eosio.reward
 
-The [reward contract](https://unicove.com/en/eos/contract/eosio.reward) ([see contract code](https://github.com/vaultafoundation/eosio.reward)) is an intermediate contract 
+The [reward contract](https://unicove.com/contract/eosio.reward) ([see contract code](https://github.com/vaultafoundation/eosio.reward)) is an intermediate contract 
 that is responsible for dispersing the rewards from the staking rewards tokenomics bucket to the various strategies 
 aimed at rewarding the Vaulta community.
 
-It allows the Vaulta blockchain to define a [set of receivers](https://unicove.com/en/eos/contract/eosio.reward/tables/strategies) 
+It allows the Vaulta blockchain to define a [set of receivers](https://unicove.com/contract/eosio.reward/tables/strategies) 
 that will receive rewards, and a weight for each receiver.
 
 See the [inflows](./inflows) document for more information on how the reward contract is funded.

@@ -31,11 +31,11 @@ various token allocations to target accounts.
 
 The block producers claim rewards from the **System Contract**, which then flows Vaulta into their accounts, and 
 into the `eosio.saving` account that holds a contract which distributes Vaulta to **Vaulta Labs**, the **Vaulta
-Foundation**, and the **Staking Rewards** buckets (these are configured in [the `eosio.saving` contract](https://unicove.com/en/eos/contract/eosio.saving/tables/config)).
+Foundation**, and the **Staking Rewards** buckets (these are configured in [the `eosio.saving` contract](https://unicove.com/contract/eosio.saving/tables/config)).
 
 As the rewards flow into the `eosio.saving` account, they are immediately split up according to the distribution 
 configurations on that contract, which are set by a 15/21 multisig of the block producers and tallied into 
-[the `claimers` table](https://unicove.com/en/eos/contract/eosio.saving/tables/claimers).
+[the `claimers` table](https://unicove.com/contract/eosio.saving/tables/claimers).
 
 Once funds are available, each entity can claim their rewards by calling the `claim` action, which then sends 
 the funds to the account specified in the configuration.
