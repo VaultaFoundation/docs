@@ -609,7 +609,7 @@ CONTRACT token : public contract {
 ## Grab battle tested source code
 
 If you'd like to simply use the source code which is used in most fungible tokens on Vaulta, you can head over to the
-[eosio.token](https://github.com/vaultafoundation/eos-system-contracts/tree/4702c8f2d95dd06f0924688560b8457962522216/contracts/eosio.token)
+[eosio.token](https://github.com/vaultafoundation/system-contracts/tree/4702c8f2d95dd06f0924688560b8457962522216/contracts/eosio.token)
 repository to grab it. Not only is this code battle tested, but it powers the underlying EOS token.
 
 Please note that the standard `eosio.token` contract differs considerably from this tutorial. It is a more complex

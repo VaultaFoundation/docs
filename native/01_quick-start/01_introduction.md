@@ -15,7 +15,7 @@ which dives into the knowledge you need to get off on the right foot.
 
 But once you're ready to develop locally, you can use this CLI to create a new project with a frontend and contracts.
 ```bash
-npm create eos@latest myproject
+npm create vaulta@latest myproject
 ```
 
 Follow the prompts, and it will set up either a [Template Project](https://github.com/vaultafoundation/template-projects)

@@ -20,8 +20,8 @@ The Vaulta blockchain is unique in that the features and characteristics of the 
 
 The Vaulta Network Foundation implements and maintains these `system contracts` as reference implementations only, encapsulating the base functionality for an Vaulta-based blockchain. The `system contracts` are listed below:
 
-* [eosio.bios](https://github.com/vaultafoundation/eos-system-contracts/tree/main/contracts/eosio.bios) - The `eosio.bios` contract is a special contract that is used to initialize the blockchain
-* [eosio.system](https://github.com/vaultafoundation/eos-system-contracts/tree/main/contracts/eosio.system) - The `eosio.system` contract is the core contract that implements the foundational Vaulta blockchain features
-* [eosio.msig](https://github.com/vaultafoundation/eos-system-contracts/tree/main/contracts/eosio.msig) - The `eosio.msig` contract implements the multi-signature functionality
-* [eosio.token](https://github.com/vaultafoundation/eos-system-contracts/tree/main/contracts/eosio.token) - The `eosio.token` contract implements the system token functionality
-* [eosio.wrap](https://github.com/vaultafoundation/eos-system-contracts/tree/main/contracts/eosio.wrap) - The `eosio.wrap` contract implements a governance feature
+* [eosio.bios](https://github.com/vaultafoundation/system-contracts/tree/main/contracts/eosio.bios) - The `eosio.bios` contract is a special contract that is used to initialize the blockchain
+* [eosio.system](https://github.com/vaultafoundation/system-contracts/tree/main/contracts/eosio.system) - The `eosio.system` contract is the core contract that implements the foundational Vaulta blockchain features
+* [eosio.msig](https://github.com/vaultafoundation/system-contracts/tree/main/contracts/eosio.msig) - The `eosio.msig` contract implements the multi-signature functionality
+* [eosio.token](https://github.com/vaultafoundation/system-contracts/tree/main/contracts/eosio.token) - The `eosio.token` contract implements the system token functionality
+* [eosio.wrap](https://github.com/vaultafoundation/system-contracts/tree/main/contracts/eosio.wrap) - The `eosio.wrap` contract implements a governance feature

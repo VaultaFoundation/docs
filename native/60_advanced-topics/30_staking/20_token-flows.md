@@ -45,7 +45,7 @@ account until they are distributed to the various strategies that are configured
 `distribute` action.
 
 When the `distribute` action is called, the funds aimed at Vaulta Staking are used in the [`donatetorex` action]
-(https://github.com/vaultafoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.cpp#L389)
+(https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.cpp#L389)
 back on the System Contract which adds those funds to the REX pools, and then sends the funds to `eosio.rex` for 
 accounting purposes.
 

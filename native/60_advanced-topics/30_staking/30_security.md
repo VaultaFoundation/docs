@@ -67,9 +67,9 @@ robust.
 
 Tests relevant to the staking protocol can be found at the following locations:
 
-- [Core staking tests](https://github.com/vaultafoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.system_tests.cpp#L3948)
-- [Maturity tests](https://github.com/vaultafoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.system_rex_matured_tests.cpp#L1)
-- [Fees tests](https://github.com/vaultafoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.fees_tests.cpp#L1)
+- [Core staking tests](https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.system_tests.cpp#L3948)
+- [Maturity tests](https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.system_rex_matured_tests.cpp#L1)
+- [Fees tests](https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/tests/eosio.fees_tests.cpp#L1)
 - [Reward contract tests](https://github.com/vaultafoundation/eosio.reward/blob/4a2f3cb9ffcbabb5f1682540636aae02d5d8480c/eosio.reward.spec.ts#L1)
  
 

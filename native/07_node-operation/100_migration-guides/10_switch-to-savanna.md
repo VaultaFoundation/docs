@@ -18,7 +18,7 @@ There are four steps
 ### Antelope Software Requirements
 Switching to Savanna will required the latest version of Spring Software and the Vaulta System Contracts.
 - [Spring v1.0.0](https://github.com/AntelopeIO/spring/releases)
-- [Vaulta System Contracts v3.6.0](https://github.com/vaultafoundation/eos-system-contracts/releases)
+- [Vaulta System Contracts v3.6.0](https://github.com/vaultafoundation/system-contracts/releases)
 
 **Note:** [CDT v4.1.0](https://github.com/AntelopeIO/cdt/releases) is needed to compile the latest Vaulta System Contracts. This version of CDT contains both the needed host functions, and cryptography support needed to support managing finalizer keys.
 

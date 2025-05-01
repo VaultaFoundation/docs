@@ -1,4 +1,4 @@
-# Contributing to EOS Docs
+# Contributing to Vaulta Docs
 
 First, the fact you're even here right now means you're awesome. Thanks!
 

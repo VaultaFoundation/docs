@@ -239,7 +239,7 @@ read this.
 
 ### Compiling the contract yourself
 
-You can clone the [Vaulta System Contracts](https://github.com/vaultafoundation/eos-system-contracts/) repository,
+You can clone the [Vaulta System Contracts](https://github.com/vaultafoundation/system-contracts/) repository,
 and then compile the contracts using the `build.sh` script.
 
 You will then have a `build/contracts` directory that contains the compiled contracts.

@@ -115,7 +115,7 @@ this model on the blockchain and allocates these resources to the account of you
 
 * The `payer` of the fee, must be a valid Vaulta account.
 * The `receiver` of the resources, must be a valid Vaulta account.
-* The `days` which must always match `state.powerup_days` specified in the [PowerUp configuration settings](https://github.com/vaultafoundation/eos-system-contracts/blob/7cec470b17bd53b8c78465d4cbd889dbaf1baffb/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L588).
+* The `days` which must always match `state.powerup_days` specified in the [PowerUp configuration settings](https://github.com/vaultafoundation/system-contracts/blob/7cec470b17bd53b8c78465d4cbd889dbaf1baffb/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L588).
 * The `net_frac`, and the `cpu_frac` are the percentage of the resources that you need. The easiest way to calculate the percentage is to multiply 10^15 (100%) by the desired percentage. For example: 10^15 * 0.01 = 10^13.
 * The `max_payment`, must be expressed in Vaulta and is the maximum amount the `payer` is willing to pay.
 

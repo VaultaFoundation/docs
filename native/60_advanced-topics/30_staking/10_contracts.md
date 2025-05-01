@@ -236,7 +236,7 @@ rounding errors.
 
 ## eosio.rex
 
-The [contract on the eosio.rex account](https://github.com/vaultafoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.results.cpp#L1) is merely a record-keeping contract. Each of the actions
+The [contract on the eosio.rex account](https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.results.cpp#L1) is merely a record-keeping contract. Each of the actions
 does nothing (no implmentation) and is only there to provide an identifiable record within the transactions stack that
 can be tracked and filtered by external tooling such as history solutions or frontend SDKs that want more 
 information that normally would not be available (like the REX received for an amount of EOS in a `buyrex` action).
