@@ -13,7 +13,7 @@ There are a few different contracts involved in Vaulta staking.
 3. `eosio.rex` - Account that holds all funds in the staking protocol.
 
 > ℹ️ **Underlying tokens**
-> Though Vaulta uses the VAULTA token, the staking system is legacy and uses EOS tokens in the rows for its data.
+> Though Vaulta uses the `A` token, the staking system is legacy and uses EOS tokens in the rows for its data.
 
 ## eosio.system
 

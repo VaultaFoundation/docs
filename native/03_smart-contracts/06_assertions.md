@@ -37,7 +37,7 @@ check(false, "This contract is: " + thisContract.to_string());
 #### Logging `asset`
 
 ```cpp
-asset myAsset = asset(100, symbol("VAULTA", 4));
+asset myAsset = asset(100, symbol("A", 4));
 check(false, "My asset is: " + myAsset.to_string());
 ```
 

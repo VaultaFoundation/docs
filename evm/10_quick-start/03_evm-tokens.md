@@ -52,7 +52,7 @@ To withdraw EOS tokens from a centralized exchange (CEX) to a Vaulta EVM address
 
 To withdraw Vaulta tokens from a centralized exchange (CEX) to a Vaulta EVM address:
 1. Visit the withdrawal screen of the Exchange's app
-2. Select VAULTA as Coin
+2. Select `A` as Coin
 3. Select Vaulta as Network
 4. Swap your Vaulta tokens to EOS
    1. Send Vaulta tokens to `core.vaulta` to get EOS

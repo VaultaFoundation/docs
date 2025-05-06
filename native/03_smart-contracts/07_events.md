@@ -4,7 +4,7 @@ title: Events
 
 Events are a way for smart contracts to communicate with each other as side-effects of actions.
 
-The most common in-use usage of events is tracking `core.vaulta` (`VAULTA`) transfers, but they can be used for
+The most common in-use usage of events is tracking `core.vaulta` (`A`) transfers, but they can be used for
 any type of communication between contracts.
 
 We will use that exact example below, but first we will cover the basics of events.

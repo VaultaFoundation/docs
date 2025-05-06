@@ -122,7 +122,7 @@ this model on the blockchain and allocates these resources to the account of you
 <br />
 
 ```sh
-cleos push action core.vaulta powerup '[user, user, 1, 10000000000000, 10000000000000, "1000.0000 VAULTA"]' -p user
+cleos push action core.vaulta powerup '[user, user, 1, 10000000000000, 10000000000000, "1000.0000 A"]' -p user
 ```
 
 <br />

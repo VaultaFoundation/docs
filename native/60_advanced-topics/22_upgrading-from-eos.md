@@ -10,7 +10,7 @@ There are some basic changes to the network that you need to be aware of when up
 
 - Network name: **Vaulta**
 - System contract: `core.vaulta`
-- Token symbol: **VAULTA**
+- Token symbol: **A**
 - Token precision: **4**
 - Token contract: `core.vaulta`
 - Token swap contract: `core.vaulta`
@@ -19,22 +19,22 @@ There are some basic changes to the network that you need to be aware of when up
 ## The system contract
 
 The new system contract is `core.vaulta` which serves three purposes:
-- It is a token contract for the new token `VAULTA`
+- It is a token contract for the new token `A`
 - It is a token swap contract
 - It is a system contract that wraps all the functionality of the old system contract (`eosio`)
 
 The new system contract is a drop-in replacement for the old system contract.
 You can use the same user-facing actions that you would with the `eosio` contract, except that the token symbol is
-now `VAULTA` instead of `EOS` for all actions that have an `asset` that expects `EOS` as the symbol.
+now `A` instead of `EOS` for all actions that have an `asset` that expects `EOS` as the symbol.
 
 ## The token
 
-The new `VAULTA` token is a drop-in replacement for `EOS`, has the same precision (4), and max supply (2.1 billion).
+The new `A` token is a drop-in replacement for `EOS`, has the same precision (4), and max supply (2.1 billion).
 
 ### Integrating the new token
 
 You will need to add new handlers for catching token transfers to your smart contracts if you want to support the
-`VAULTA` token.
+`A` token.
 
 ```cpp
 [[eosio::on_notify("core.vaulta::transfer")]]
@@ -46,7 +46,7 @@ void on_transfer(name from, name to, asset quantity, string memo) {
 }
 ```
 
-If you want to simply make sure that your `EOS` supporting contract isn't allowing `VAULTA` transfers, you can
+If you want to simply make sure that your `EOS` supporting contract isn't allowing `A` transfers, you can
 prevent the action from being executed by checking the symbol of the asset or contract.
 
 ```cpp
@@ -62,13 +62,13 @@ void on_transfer(name from, name to, asset quantity, string memo) {
     }
 }
 
-// Or explicitly denying VAULTA transfers
+// Or explicitly denying A transfers
 [[eosio::on_notify("core.vaulta::transfer")]]
 void on_vaulta(name from, name to, asset quantity, string memo) {
     // Keep in mind you still want these checks, or you will not be able to 
-    // transfer VAULTA from the smart contract.
+    // transfer A from the smart contract.
     if (from == get_self() || to != get_self()) return;
-    check(false, "This contract does not support VAULTA transfers");
+    check(false, "This contract does not support Vaulta (A) transfers");
 }
 ```
 
@@ -76,7 +76,7 @@ void on_vaulta(name from, name to, asset quantity, string memo) {
 
 Transferring Vaulta tokens is the same as transferring EOS tokens.
 
-Here is an example using [Wharfkit](https://wharfkit.com/) to transfer VAULTA tokens:
+Here is an example using [Wharfkit](https://wharfkit.com/) to transfer `A` tokens:
 
 ```javascript
 import { Session, Chains } from "@wharfkit/session"
@@ -102,7 +102,7 @@ const result = await session.transact({
         data: {
             from: session.actor, // this is your account
             to: "change.me", // the recipient's account
-            quantity: "100.0000 VAULTA",
+            quantity: "100.0000 A",
             memo: "your optional extra data", // optional, can be blank
         },
     },
@@ -136,20 +136,20 @@ console.log(
 
 ## Swapping
 
-If you have EOS in your account, you will need to swap it to VAULTA.
-The swap is a 1:1 swap, so you will get the same amount of VAULTA as you had EOS.
+If you have EOS in your account, you will need to swap it to `A`.
+The swap is a 1:1 swap, so you will get the same amount of `A` as you had EOS.
 
 ### RAM considerations
 
 The swap contract will sponsor the RAM required for the swap, so you do not need to worry about RAM costs
 when swapping, however you will need 241 bytes of RAM available in your account on your first transfer.
 
-### Swapping from EOS to VAULTA
+### Swapping from EOS to `A`
 
-Swapping from EOS to VAULTA is as simple as sending your EOS tokens to the new system contract (`core.vaulta`).
+Swapping from EOS to `A` is as simple as sending your EOS tokens to the new system contract (`core.vaulta`).
 You can do this using any wallet that supports the EOS network, or using javascript like below.
 
-Here is an example using [Wharfkit](https://wharfkit.com/) to swap from EOS to VAULTA:
+Here is an example using [Wharfkit](https://wharfkit.com/) to swap from EOS to `A`:
 
 ```javascript
 await api.transact({
@@ -172,13 +172,13 @@ await api.transact({
 
 ```
 
-In the transfer above, the sender account will get back the same amount of VAULTA as the amount of EOS
-they sent to the `core.vaulta` contract, in this case `100.0000 VAULTA`.
+In the transfer above, the sender account will get back the same amount of `A` as the amount of EOS
+they sent to the `core.vaulta` contract, in this case `100.0000 A`.
 
-Here is an example of using cleos to swap from EOS to VAULTA:
+Here is an example of using cleos to swap from EOS to `A`:
 
 ```bash
-cleos push action core.vaulta transfer '["youraccount", "change.me", "100.0000 VAULTA", "your optional memo"]' -p 
+cleos push action core.vaulta transfer '["youraccount", "change.me", "100.0000 A", "your optional memo"]' -p 
 youraccount
 ```
 
@@ -217,7 +217,7 @@ await session.transact({
 })
 ```
 
-This will swap 100 EOS in your account to 100 VAULTA and send it to the `some.account` account.
+This will swap 100 EOS in your account to 100 `A` and send it to the `some.account` account.
 
 > ⚠ **Important**
 >
@@ -261,8 +261,8 @@ cleos push action core.vaulta blockswapto '["youraccount", true]' -p youraccount
 
 ## System contract actions
 
-The new system contract has the same actions as the old system contract, except that the token symbol is now `VAULTA`.
-With actions that would normally expect EOS, you will need to use VAULTA instead. 
+The new system contract has the same actions as the old system contract, except that the token symbol is now `A`.
+With actions that would normally expect EOS, you will need to use `A` instead. 
 
 For example, if you wanted to buy RAM using Vaulta tokens, you would do it like this:
 
@@ -275,13 +275,13 @@ await session.transact({
         data: {
             payer: session.actor,
             receiver: session.actor,
-            quant: "1.0000 VAULTA"
+            quant: "1.0000 A"
         },
     },
 })
 ```
 
-You will also get VAULTA tokens back if you sell RAM.
+You will also get `A` tokens back if you sell RAM.
 
 ```javascript
 await session.transact({
@@ -303,8 +303,8 @@ await session.transact({
 - **What happens to staked eos (in REX or staked to an account)?**
     - All staked EOS will be automatically swapped when withdrawing from the new system contract. You do not need to do anything to swap your staked EOS.
 - **What if I don't swap in time?**
-    - You will always be able to move from EOS to VAULTA
-- **Can I swap back from VAULTA to EOS?**
+    - You will always be able to move from EOS to `A`
+- **Can I swap back from `A` to EOS?**
     - This is a period where a bidirectional swap is supported. You can send your Vaulta tokens to the `core.vaulta` contract and get back EOS tokens. 
     - This is aimed at making sure that contract developers and users have time to upgrade their contracts and wallets to support the new token.
 

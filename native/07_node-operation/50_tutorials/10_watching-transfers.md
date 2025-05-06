@@ -612,7 +612,7 @@ for(let transaction of result.transactions) {
                 const [amount, symbol] = quantity.split(' ');
                 // You should also check that the symbol matches
                 // the symbol that you're expecting as well
-                if(symbol !== 'VAULTA') {
+                if(symbol !== 'A') {
                     // This is not the token that we're expecting
                     continue;
                 }
