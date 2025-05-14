@@ -100,7 +100,7 @@ into the search field.
 You have successfully deployed your first smart contract to the Vaulta EVM! 🎉
 
 If you already have a front-end application that interacts with your smart contract, you can now point it at the 
-[Vaulta EVM Endpoints](/evm/999_miscellaneous/10_endpoints.md), and it will work as expected.
+[Vaulta EVM Endpoints](../quick-start/endpoints), and it will work as expected.
 
 Make sure you visit the [**Compatibility**](/evm/999_miscellaneous/20_evm-compatibility.md) section to learn about the differences between
 the Vaulta EVM and Ethereum, and how to make sure your web3 application works on the Vaulta EVM as expected.

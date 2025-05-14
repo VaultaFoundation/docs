@@ -3,7 +3,7 @@ title: Spring 1.0 Upgrade Guide
 ---
 
 ## Purpose
-This upgrade guide covers the steps for upgrading a node to Spring v1 from prior Leap versions. The Node Operator's guide [Switching Over To Savanna Consensus Algorithm](https://docs.vaulta.com/docs/latest/node-operation/migration-guides/switch-to-savanna) covers the steps needed to upgrade the consensus algorithm. Node Producers will be interested in [Guide to Managing Finalizer Keys](https://docs.vaulta.com/docs/latest/advanced-topics/managing-finalizer-keys)
+This upgrade guide covers the steps for upgrading a node to Spring v1 from prior Leap versions. The Node Operator's guide [Switching Over To Savanna Consensus Algorithm](https://docs.vaulta.com/docs/latest/node-operation/migration-guides/switch-to-savanna) covers the steps needed to upgrade the consensus algorithm. Node Producers will be interested in [Guide to Managing Finalizer Keys](../../advanced-topics/managing-finalizer-keys)
 
 ### Summary of Changes
 - [Exceeding number of in flight requests or Mb in flight now returns HTTP 503](#updated-error-codes)
@@ -144,5 +144,5 @@ Scripts that move or delete the ‘data’ directory need to protect the finaliz
 - `finalizers-dir` - Specifies the directory path for storing voting history. Node Operators may want to specify a directory outside of their nodeos' data directory, and manage this as distinct file. More information in [Guide to Managing Finalizer Keys](../../../advanced-topics/managing-finalizer-keys).
 
 ### New `vote-threads` Option
-Where there is a block producing node that connects to its peers through an intermediate nodeos, the intermediate nodeos will need to have an integer value greater than 0 for `vote-threads`. The default value for `vote-threads` is 4. When `vote-threads` is not an integer greater than 0, votes are not propagated. See [Voting and Peering](../../../advanced-topics/introduction-finalizers-voting/#voting-and-peering) for more background and recomendations on configuring `vote-threads`.
+Where there is a block producing node that connects to its peers through an intermediate nodeos, the intermediate nodeos will need to have an integer value greater than 0 for `vote-threads`. The default value for `vote-threads` is 4. When `vote-threads` is not an integer greater than 0, votes are not propagated. See [Voting and Peering](../../advanced-topics/introduction-finalizers-voting/#voting-and-peering) for more background and recomendations on configuring `vote-threads`.
 - `vote-threads` - Sets the number of threads to handle voting. The default is sufficient for all known production setups, and the recommendation is to leave this value unchanged.

@@ -10,9 +10,7 @@ The `Vaulta Core` provides the basic building blocks for the `system` layer. How
 
 The core protocols are:
 
-1. [Consensus Protocol](01_consensus-protocol.md)
-2. [Transactions Protocol](02_transactions-protocol.md)
-3. [Network or Peer to Peer Protocol](03_network-peer-protocol.md)
+1. [Transactions Protocol](02_transactions-protocol.md)
 
 ## System
 
