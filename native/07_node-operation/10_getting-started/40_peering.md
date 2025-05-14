@@ -11,7 +11,7 @@ Vaulta blockchains may consist of one or many nodes. Although a single node can 
 Peering allows Vaulta nodes to propagate and synchronize the distributed blockchain state by receiving and relaying blocks and/or transactions to other nodes. Any node that is configured to send and receive data in a peer-to-peer fashion is considered a "peer". This adds redundancy and allows for faster response times to client queries and node requests. Therefore, peering is key to the decentralized operation and incremental growth of the Vaulta blockchain.
 
 > ℹ️ Vaulta Network Protocol  
-Peering is enabled through the Vaulta peer-to-peer (p2p) network protocol and it is what allows the decentralized operation of the blockchain. For more information, check the [Vaulta Network Protocol](../../60_advanced-topics/03_network-peer-protocol.md).
+Peering is enabled through the Vaulta peer-to-peer (p2p) network protocol and it is what allows the decentralized operation of the blockchain.
 
 ## Why you need nodes/peers?
 

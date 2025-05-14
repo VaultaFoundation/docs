@@ -51,9 +51,9 @@ Option (=default) | Description
 
 ## Examples
 
-* [How to replay or resync with full history](../../snapshots#replay--resync-with-full-state-history)
-* [How to create a portable snapshot with full state history](../../snapshots#creating-a-snapshot-with-full-state-history)
-* [How to restore a portable snapshot with full state history](../../snapshots#restoring-a-snapshot-with-full-state-history)
+* [How to replay or resync with full history](../snapshots#replay--resync-with-full-state-history)
+* [How to create a portable snapshot with full state history](../snapshots#creating-a-snapshot-with-full-state-history)
+* [How to restore a portable snapshot with full state history](../snapshots#restoring-a-snapshot-with-full-state-history)
 
 ## Dependencies
 
