@@ -3,7 +3,7 @@ title: "V1 History Alternatives"
 sidebar_position: 1
 ---
 
-The latest EOS v3.1 release officially ends support for the legacy V1 History plugin. Therefore, block producers and node operators who have integrations that rely on V1 History must seek alternative solutions.
+The latest Vaulta v3.1 release officially ends support for the legacy V1 History plugin. Therefore, block producers and node operators who have integrations that rely on V1 History must seek alternative solutions.
 
 ## Production Ready Alternatives
 
@@ -23,7 +23,7 @@ Roborovski History API is implemented and ran by [Greymass Inc.](https://greymas
 
 ## What makes the Roborovski History API safe
 
-Roborovski History API has a high degree of safety because it is created by [Greymass Inc.](https://greymass.com/) which has been a credible and stable block producer and wallet developer (Anchor) company for EOS, WAX, TELOS, PROTON, FIO and other EOS based chains.
+Roborovski History API has a high degree of safety because it is created by [Greymass Inc.](https://greymass.com/) which has been a credible and stable block producer and wallet developer (Anchor) company for Vaulta.
 
 ## Understanding the risks associated with hosted solutions
 
@@ -39,18 +39,18 @@ Existing V1 History Plugin integrators can simply replace their current API url 
 
 ### How To Connect
 
-The Roborovski History API connection endpoint is `https://eos.greymass.com`
+The Roborovski History API connection endpoint is `https://vaulta.greymass.com`
 
 ### Functions List
 
 - Get Actions (V1 compatible)
-    - POST `https://eos.greymass.com/v1/history/get_actions`
+    - POST `https://vaulta.greymass.com/v1/history/get_actions`
 - Get Transaction (V1 compatible)
-    - POST `https://eos.greymass.com/v1/history/get_transaction`
+    - POST `https://vaulta.greymass.com/v1/history/get_transaction`
 - Get Transaction (new method, not in V1)
-    - GET `https://eos.greymass.com/v1/history/get_transaction?id=<TXID>`
+    - GET `https://vaulta.greymass.com/v1/history/get_transaction?id=<TXID>`
 - Get Actions (new method, not in V1)
-    - GET `https://eos.greymass.com/v1/history/get_actions?account_name=<NAME>`
+    - GET `https://vaulta.greymass.com/v1/history/get_actions?account_name=<NAME>`
 
 ### Performance Numbers
 
@@ -62,13 +62,13 @@ As it was observed and measured so far the Roborovski History API supports at le
 
 ## Overview
 
-Hyperion History is a full history solution for indexing, storing and retrieving EOS-based blockchain historical data. It can be deployed by node operators to provide data querying support for actions, transactions, and blocks stored on the blockchain.
+Hyperion History is a full history solution for indexing, storing and retrieving Vaulta-based blockchain historical data. It can be deployed by node operators to provide data querying support for actions, transactions, and blocks stored on the blockchain.
 
 Hyperion History API provides both V2 and V1 (legacy history plugin) endpoints. Therefore, it is fully compliant with V1 history.
 
 ## What makes the Hyperion safe
 
-Hyperion is developed and maintained by EOS Rio: https://eosrio.io/hyperion/ and has been battle tested on every Antelope public network (EOS, WAX, TELOS, PROTON, FIO, etc).
+Hyperion is developed and maintained by EOS Rio: https://eosrio.io/hyperion/ and has been battle tested for almost a decade.
 
 * Github: https://github.com/eosrio/Hyperion-History-API
 * Documentation: https://hyperion.docs.eosrio.io/

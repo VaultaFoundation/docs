@@ -6,26 +6,29 @@ title: Contracts
     <title>Staking Contracts</title>
 </head>
 
-There are a few different contracts involved in EOS staking.
+There are a few different contracts involved in Vaulta staking.
 
 1. `eosio.system` - The system and staking contract.
 2. `eosio.reward` - An intermediate reward dispersal contract.
 3. `eosio.rex` - Account that holds all funds in the staking protocol.
 
+> ℹ️ **Underlying tokens**
+> Though Vaulta uses the `A` token, the staking system is legacy and uses EOS tokens in the rows for its data.
+
 ## eosio.system
 
-The [system contract](https://eosauthority.com/account/eosio) is wider than just staking and controls the entire EOS network with 
+The [system contract](https://unicove.com/account/eosio) is wider than just staking and controls the entire Vaulta network with 
 capabilities like account creation, chain governance, and resource management.
 
 The staking portions of the system contract are responsible for managing the staking
-and unstaking of EOS tokens, as well as the distribution of rewards from the pre-allocated
+and unstaking of Vaulta tokens, as well as the distribution of rewards from the pre-allocated
 staking rewards pool.
 
 ![Staking Contract Flow](/images/diagram_staking_contract_flow.png)
 
 ### Depositing Funds
 
-In order to use EOS inside the staking portion of the system contract, you need to deposit them first. 
+In order to use Vaulta inside the staking portion of the system contract, you need to deposit them first. 
 
 ```cpp
 void deposit( const name& owner, const asset& amount )
@@ -50,7 +53,7 @@ This will stake the funds that you have deposited into the staking protocol and 
 
 ### Staking Funds From Voting Rights
 
-On EOS you can have your EOS staked as voting rights. You may also use those funds as a source for staking.
+You can have your Vaulta staked as voting rights. You may also use those funds as a source for staking.
 
 ```cpp
 void unstaketorex( const name& owner, const name& receiver, const asset& from_net, const asset& from_cpu )
@@ -82,18 +85,18 @@ You will need to do this in two steps.
 void sellrex( const name& from, const asset& rex )
 ```
 
-This action will convert your REX tokens back into EOS and register them as available to withdraw.
+This action will convert your REX tokens back into Vaulta and register them as available to withdraw.
 
 ```cpp
 void withdraw( const name& owner, const asset& amount )
 ```
 
-This action will withdraw your EOS tokens from the staking protocol and transfer them to your account.
+This action will withdraw your Vaulta tokens from the staking protocol and transfer them to your account.
 
 
 > **Note**   
 > Any action you take within the staking protocol once a 21-day unstaking period has finished will trigger an 
-> automatic `sellrex` on your fully matured REX tokens. This will convert them back into EOS and register them as 
+> automatic `sellrex` on your fully matured REX tokens. This will convert them back into Vaulta and register them as 
 > available to withdraw.
 
 ### Tables
@@ -102,7 +105,7 @@ The system contract has a few tables that are relevant to staking.
 
 #### rexbal
 
-[The `rexbal` table](https://eosauthority.com/account/eosio?network=eos&scope=eosio&table=rexbal&limit=10&index_position=1&key_type=i64&reverse=0&mode=contract&sub=tables) holds information about staked balances for users.
+[The `rexbal` table](https://unicove.com/contract/eosio/tables/rexbal) holds information about staked balances for users.
 
 - `version`
 - `owner`
@@ -113,7 +116,7 @@ The system contract has a few tables that are relevant to staking.
 
 #### rexfund
 
-[The `rexfund` table](https://eosauthority.com/account/eosio?network=eos&scope=eosio&table=rexfund&limit=10&index_position=1&key_type=i64&reverse=0&mode=contract&sub=tables&lower_bound=)
+[The `rexfund` table](https://unicove.com/contract/eosio/tables/rexfund)
 holds information about the deposited but unstaked EOS funds for users. 
 
 - `version`
@@ -122,7 +125,7 @@ holds information about the deposited but unstaked EOS funds for users.
 
 #### rexmaturity
 
-[The `rexmaturity` table](https://eosauthority.com/account/eosio?network=eos&scope=eosio&table=rexmaturity&limit=10&index_position=1&key_type=i64&reverse=0&mode=contract&sub=tables)
+[The `rexmaturity` table](https://unicove.com/contract/eosio/tables/rexmaturity)
 holds information about the maturity dates of REX tokens for users.
 
 - `num_of_maturity_buckets` - The number of days until a position fully matures
@@ -131,7 +134,7 @@ holds information about the maturity dates of REX tokens for users.
 
 #### rexpool
 
-[The `rexpool` table](https://eosauthority.com/account/eosio?network=eos&scope=eosio&table=rexpool&limit=10&index_position=1&key_type=i64&reverse=0&mode=contract&sub=tables)
+[The `rexpool` table](https://unicove.com/contract/eosio/tables/rexpool)
 holds information about the staking pool.
 
 - `version`
@@ -167,11 +170,11 @@ static convertRexToEos(rex:number){
 }
 ```
 
-If you'd like to view full code for this example, [see here](https://github.com/eosnetworkfoundation/rex-staking-portal/blob/6f1297bbb5cc5e4d1e39ac5e52e815ea69a29803/src/lib/wharf.ts#L142-L143).
+If you'd like to view full code for this example, [see here](https://github.com/vaultafoundation/rex-staking-portal/blob/6f1297bbb5cc5e4d1e39ac5e52e815ea69a29803/src/lib/wharf.ts#L142-L143).
 
 #### rexretpool
 
-[The `rexretpool` table](https://eosauthority.com/account/eosio?network=eos&scope=eosio&table=rexretpool&limit=10&index_position=1&key_type=i64&reverse=0&mode=contract&sub=tables)
+[The `rexretpool` table](https://unicove.com/contract/eosio/tables/rexretpool)
 holds information about the return pool for REX tokens.
 
 - `version`
@@ -184,11 +187,11 @@ holds information about the return pool for REX tokens.
 
 ## eosio.reward
 
-The [reward contract](https://eosauthority.com/account/eosio.reward) ([see contract code](https://github.com/eosnetworkfoundation/eosio.reward)) is an intermediate contract 
+The [reward contract](https://unicove.com/contract/eosio.reward) ([see contract code](https://github.com/vaultafoundation/eosio.reward)) is an intermediate contract 
 that is responsible for dispersing the rewards from the staking rewards tokenomics bucket to the various strategies 
-aimed at rewarding the EOS community.
+aimed at rewarding the Vaulta community.
 
-It allows the EOS Network to define a [set of receivers](https://eosauthority.com/account/eosio.reward?mode=contract&sub=tables&network=eos&scope=eosio.reward&table=strategies&limit=10&index_position=1&key_type=i64&reverse=0) 
+It allows the Vaulta blockchain to define a [set of receivers](https://unicove.com/contract/eosio.reward/tables/strategies) 
 that will receive rewards, and a weight for each receiver.
 
 See the [inflows](./inflows) document for more information on how the reward contract is funded.
@@ -233,7 +236,7 @@ rounding errors.
 
 ## eosio.rex
 
-The [contract on the eosio.rex account](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.results.cpp#L1) is merely a record-keeping contract. Each of the actions
+The [contract on the eosio.rex account](https://github.com/vaultafoundation/system-contracts/blob/8ecd1ac6d312085279cafc9c1a5ade6affc886da/contracts/eosio.system/src/rex.results.cpp#L1) is merely a record-keeping contract. Each of the actions
 does nothing (no implmentation) and is only there to provide an identifiable record within the transactions stack that
 can be tracked and filtered by external tooling such as history solutions or frontend SDKs that want more 
 information that normally would not be available (like the REX received for an amount of EOS in a `buyrex` action).

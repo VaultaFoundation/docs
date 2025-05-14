@@ -18,17 +18,17 @@ CONTRACT mycontract : public contract {
    public:
       using contract::contract;
       TABLE user {
-         name     eos_account;
+         name     account;
          uint8_t  is_admin;
 
          uint64_t primary_key() const { 
-            return eos_account.value; 
+            return account.value; 
          }
       };
 
       using user_table = eosio::multi_index<"users"_n, user>;
 
-      ACTION newuser( name eos_account ){}
+      ACTION newuser( name account ){}
 };
 ```
 
@@ -44,7 +44,7 @@ The code above will produce the following JSON ABI:
             "base": "",
             "fields": [
                 {
-                    "name": "eos_account",
+                    "name": "account",
                     "type": "name"
                 }
             ]
@@ -54,7 +54,7 @@ The code above will produce the following JSON ABI:
             "base": "",
             "fields": [
                 {
-                    "name": "eos_account",
+                    "name": "account",
                     "type": "name"
                 },
                 {
@@ -138,7 +138,7 @@ Structs are custom data structures defined in the contract. They are often used 
   "base": "",
   "fields": [
     {
-      "name": "eos_account",
+      "name": "account",
        "type": "name"
     }
   ]

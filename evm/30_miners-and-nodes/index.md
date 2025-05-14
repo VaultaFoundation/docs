@@ -1,4 +1,4 @@
 ---
-title: Running EOS EVM Nodes
+title: Running Vaulta EVM Nodes
 sidebar_class_name: sidebarhidden
 ---

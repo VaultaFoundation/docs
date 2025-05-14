@@ -12,7 +12,7 @@ isn't the only time you might want to use this pattern, hence the term "Linked-A
 Taking deposit pattern as our example, let's look at what this transaction might look like:
 ```
 - Transaction
-    1. eosio.token::transfer (Token Transfer) 
+    1. core.vaulta::transfer (Token Transfer) 
         -[inline] mycontract::on_transfer (Notifiable Action Receiver) 
     2. mycontract::record (Regular Action)
 ```
@@ -43,7 +43,7 @@ ACTION transfer(name from, name to, asset quantity, string memo){
 ```cpp
 #include <eosio/asset.hpp>
 
-[[eosio::on_notify("eosio.token::transfer")]]
+[[eosio::on_notify("core.vaulta::transfer")]]
 void on_transfer(name from, name to, asset quantity, string memo){
     // ...
 }
@@ -85,7 +85,7 @@ TABLE transfer_info {
 
 using _transfers = multi_index<"transfers"_n, transfer_info>;
 
-[[eosio::on_notify("eosio.token::transfer")]]
+[[eosio::on_notify("core.vaulta::transfer")]]
 void on_transfer(name from, name to, asset quantity, string memo){
     _transfers transfers( get_self(), get_self().value );
     transfers.emplace( get_self(), [&]( auto& row ) {
@@ -134,7 +134,7 @@ We can combat this by adding a `check` to the `on_transfer` event receiver to ma
 is over some threshold before we store the transfer information.
 
 ```cpp
-[[eosio::on_notify("eosio.token::transfer")]]
+[[eosio::on_notify("core.vaulta::transfer")]]
 void on_transfer(name from, name to, asset quantity, string memo){
     check(quantity.amount > 100, "Must transfer more than 100 tokens");
     

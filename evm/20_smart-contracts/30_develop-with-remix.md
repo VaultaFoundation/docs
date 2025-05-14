@@ -2,7 +2,7 @@
 title: Develop with Remix
 ---
 
-Remix is a web-based IDE that allows you to write, compile, and deploy smart contracts to the EOS EVM.
+Remix is a web-based IDE that allows you to write, compile, and deploy smart contracts to the Vaulta EVM.
 
 ## Learning the interface
 
@@ -127,7 +127,7 @@ In our contract, we defined two functions:
 
 ## Compiling your smart contract
 
-Now that we have written our smart contract, we need to compile it so that we can deploy it to the EOS EVM.
+Now that we have written our smart contract, we need to compile it so that we can deploy it to the Vaulta EVM.
 
 Click on the `Solidity Compiler` icon in the sidebar.
 
@@ -145,7 +145,7 @@ If your contract has any errors, you will see a red box on the sidebar for each 
 
 ## Deploying your smart contract
 
-Now that we have compiled our smart contract, we can deploy it to the EOS EVM.
+Now that we have compiled our smart contract, we can deploy it to the Vaulta EVM.
 
 Click on the `Deploy & Run Transactions` icon in the sidebar.
 
@@ -153,7 +153,7 @@ Then click on the `ENVIROMENT` dropdown and select `Injected Provider - MetaMask
 
 > ❕ **Set up your MetaMask first!**
 > 
-> If you haven't already, make sure you have set up your MetaMask wallet and connected it to the EOS EVM.
+> If you haven't already, make sure you have set up your MetaMask wallet and connected it to the Vaulta EVM.
 > 
 > **You can follow [this guide](/evm/10_quick-start/02_setup-metamask.md) to learn how to do that.**
 
@@ -163,7 +163,7 @@ MetaMask will pop up and ask you to connect an account.
 
 ![Remix connect metamask](/images/eos-evm_using-remix_connect-metamask.png)
 
-You can now click the `Deploy` button to deploy your smart contract to the EOS EVM.
+You can now click the `Deploy` button to deploy your smart contract to the Vaulta EVM.
 
 This will open up a MetaMask popup asking you to confirm the transaction.
 
@@ -239,7 +239,7 @@ in the `Solidity Compiler` tab.
 
 **Congratulations!**
 
-You have now successfully deployed and interacted with your first smart contract on the EOS EVM!
+You have now successfully deployed and interacted with your first smart contract on the Vaulta EVM!
 
 You learned about smart contract basics, setting up MetaMask, and using Remix to develop, deploy, and interact with
 your smart contract.

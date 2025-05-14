@@ -3,7 +3,7 @@ title: test_control_api_plugin
 dont_translate_title: true
 ---
 
-See [Test Control API Reference](https://docs.eosnetwork.com/apis/leap/latest/test_control.api/)
+See [Test Control API Reference](https://docs.vaulta.com/apis/leap/latest/test_control.api/)
 
 ## Overview
 

@@ -3,7 +3,7 @@ title: Build & Deploy
 --- 
 
 In the previous section we wrote a simple smart contract. In this section we will build and deploy it to the blockchain
-using the EOS Web IDE.
+using the Vaulta Web IDE.
 
 ## What does a Smart Contract build to?
 
@@ -26,16 +26,16 @@ compilation of high-level languages like C/C++/Rust, enabling deployment on the 
 
 ## Enough talk, let's build!
 
-Go ahead and click the `Build` button in the lower left corner of the EOS Web IDE. You should see a message in the
+Go ahead and click the `Build` button in the lower left corner of the Vaulta Web IDE. You should see a message in the
 console that says `Building project...`
 
-![EOS Web IDE](/images/native-web-ide-build.png)
+![Vaulta Web IDE](/images/native-web-ide-build.png)
 
 If the build **succeeds**, you will see the zip, wasm, and abi files in the console to be downloaded.
 
 If the build **fails**, you will see the error message in the console, with the line number where the error occurred.
 
-![EOS Web IDE](/images/native-web-ide-built.png)
+![Vaulta Web IDE](/images/native-web-ide-built.png)
 
 ## Deploying to the testnet
 
@@ -43,17 +43,17 @@ Now that we have a smart contract that builds without errors, we can deploy it t
 
 Click the deploy tab on the left-most sidebar to open up the deploy options.
 
-![EOS Web IDE](/images/native-web-ide-deploy-tab.png)
+![Vaulta Web IDE](/images/native-web-ide-deploy-tab.png)
 
 Now you can click on the `Build & Deploy` button to deploy your smart contract to the blockchain.
-This will deploy your smart contract to the EOS Jungle Testnet, and allow you to interact with it.
+This will deploy your smart contract to the Vaulta Jungle Testnet, and allow you to interact with it.
 
-![EOS Web IDE](/images/native-web-ide-deploying.png)
+![Vaulta Web IDE](/images/native-web-ide-deploying.png)
 
 If there are any errors during the deployment process, you will see them in the console. If not, 
 you will see a message that says `Deployed successfully!`.
 
-![EOS Web IDE](/images/native-web-ide-deployed.png)
+![Vaulta Web IDE](/images/native-web-ide-deployed.png)
 
 ## Interacting with the contract
 
@@ -65,14 +65,14 @@ Once deployed, the sidebar will update to show you the:
 3. The actions that the contract exposes
 4. The tables that the contract exposes
 
-![EOS Web IDE](/images/native-web-ide-interact.png)
+![Vaulta Web IDE](/images/native-web-ide-interact.png)
 
 You can fill out the fields for the `save` action and click the `RUN` button to execute the action.
 
 You can also click the `GET` button next to the table that you want to query to see the data in that table, 
 you will get a `JSON` output in the console.
 
-![EOS Web IDE](/images/native-web-ide-interacted.png)
+![Vaulta Web IDE](/images/native-web-ide-interacted.png)
 
 ## Congratulations!
 

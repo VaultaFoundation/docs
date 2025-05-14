@@ -2,7 +2,7 @@
 title: Local Development
 ---
 
-Developing using the [Web IDE](https://ide.eosnetwork.com) will only take you so far.
+Developing using the [Web IDE](https://ide.vaulta.com) will only take you so far.
 Eventually, you will want to develop locally on your machine, so that you can easily use version control, your
 favorite editor, and other tools that you are used to.
 
@@ -64,7 +64,7 @@ All build files will be saved to the `build/` directory.
 
 ### Testing contracts
 
-Testing using FuckYea uses VeRT, an emulator for EOS. You can head over to the [testing guide](../03_smart-contracts/50_testing.md) if you want to learn about writing tests.
+Testing using FuckYea uses VeRT, an emulator for Vaulta. You can head over to the [testing guide](../03_smart-contracts/50_testing.md) if you want to learn about writing tests.
 
 ```bash
 npx fuckyea test [--build]
@@ -94,7 +94,6 @@ It exports a `JSON` object that includes `network` property which defines the ch
 ```json
 networks: {
     jungle: {
-        // node_url: 'https://eos.greymass.com',
         chain: 'Jungle4',
         accounts: [
             {
@@ -123,7 +122,7 @@ of available chains.
 
 Two common ones are:
 - `Jungle4`
-- `EOS`
+- `Vaulta`
 
 #### Registering accounts
 
@@ -163,8 +162,7 @@ They are injected with a `deployer` object that has the following properties:
 module.exports = async (deployer) => {
 
     const contract = await deployer.deploy('someaccount', 'build/mycontract', {
-        // adds the `eosio.code` permission to the contract account's active permission
-        // so that you can send inline actions from the contract in its name
+        // Allows the contract to be able to send tokens from itself
         addCode: true
     }).catch(err => {
         console.error(err)

@@ -2,9 +2,9 @@
 title: Anatomy
 ---
 
-The most used Smart Contract development language for EOS is C++, sometimes referred to as `EOS++`. 
-The C++ knowledge required for writing smart contracts is very minimal. If you have ever written C, C++, Java, C#, or
-TypeScript, you should be able to pick up `EOS++` easily.
+The most used Smart Contract development language for Vaulta is C++. 
+The C++ knowledge required for writing smart contracts is minimal. If you have ever written C, C++, Java, C#, or
+TypeScript, you should be able to pick up writing Vaulta smart contracts with ease.
 
 There are also community efforts to support other languages such as Rust, Python, Go, and AssemblyScript.
 However, these docs will focus on C++ for writing smart contracts. 
@@ -115,12 +115,12 @@ There are a few key components here.
 
 ### CONTRACT definition
 
-The `CONTRACT` keyword is how we tell the compiler that we are writing an EOS++ Smart Contract.
+The `CONTRACT` keyword is how we tell the compiler that we are writing a Vaulta Smart Contract.
 
 It must be followed by the name of the contract, and the base class which this contract inherits from.
 
 ```cpp
-CONTRACT mycontract : public eosio::contract {
+CONTRACT mycontract : public contract {
 ```
 
 > ❕ **Good to know**
@@ -155,12 +155,12 @@ private:
 
 ### Using Contract
 
-A required line for EOS++ Smart Contracts to compile is the `using contract::contract;` line.
+A required line for Vaulta Smart Contracts to compile is the `using contract::contract;` line.
 
 
 ### Primary Elements
 
-EOS++ Smart Contracts are made up of two primary elements:
+Vaulta Smart Contracts are made up of two primary elements:
 
 - **Actions**: The entry points to your contract. 
 - **Tables**: The way you store data in your contract.

@@ -38,7 +38,7 @@ return type.
 > ⚠ **Return values & Composability**
 >
 > Return values are only usable from outside the blockchain, and cannot currently be used
-> in EOS for smart contract composability. 
+> in Vaulta for smart contract composability. 
 
 
 ## Inline Actions
@@ -146,9 +146,34 @@ permission_level(
 The `data` argument is used to specify the parameters of the action that you are calling.
 
 A tuple is just a way to group multiple arguments together. You can create a tuple using the `std::make_tuple` function.
-
 ```cpp
 std::make_tuple(<arg1>, <arg2>, <arg3>, ...);
+```
+
+> ⚠ **Passing strings properly**
+>
+> A common issue with `make_tuple` is using literal c-strings (like `make_tuple(name, "withdrawl")`). Instead, you should use
+> `std::string` (like `make_tuple(name, std::string("withdrawl"))`).
+
+
+Instead of using `make_tuple`, you can also manually define a struct and then construct it.
+
+```cpp
+struct transfer_args {
+    name         from;
+    name         to;
+    asset        quantity;
+    string       memo;
+};
+
+// Example usage
+action(
+    permission_level{_self, name("active")},
+    name("eosio.token"),
+    name("transfer"),
+    transfer_args {.from=_self, .to=recipient, .quantity=quantity, .memo=memo}
+).send();
+
 ```
 
 ### Code Permission

@@ -12,7 +12,7 @@ This means that inscriptions are only useful for indexing and other off-chain pu
 ## Gas fees, throughput, and inscriptions
 
 On the majority of other EVM supporting chains, inscriptions has caused massive upward pressure on gas fees, as well as
-degradation of throughput. However, on EOS EVM the gas fee is fixed, and the chain is more than capable of handling the
+degradation of throughput. However, on Vaulta EVM the gas fee is fixed, and the chain is more than capable of handling the
 load of inscriptions without any noticeable impact on throughput.
 
 ### Want to test inscriptions?

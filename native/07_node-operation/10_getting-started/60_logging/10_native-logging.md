@@ -10,7 +10,7 @@ The path where the `logging.json` is stored can be explicitly defined using the 
 
 ## Appenders
 
-The EOS logging library supports two `appender` types:
+The Vaulta logging library supports two `appender` types:
 
 - [GELF](#gelf) (Graylog Extended Log Format)
 - [Console](#console)
@@ -78,7 +78,7 @@ Example:
 
 ## Loggers
 
-The EOS logging library supports the following loggers:
+The Vaulta logging library supports the following loggers:
 
 - `default` - the default logger, always enabled.
 - `producer_plugin` - detailed logging for the producer plugin.

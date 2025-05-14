@@ -5,7 +5,7 @@ dont_translate_title: true
 
 ## Overview
 
-The `chain_plugin` is an essential plugin that is necessary for the processing and consolidation of chain data on an EOS node. It implements the core functionality provided by the [Chain API plugin](./chain-api-plugin.md).
+The `chain_plugin` is an essential plugin that is necessary for the processing and consolidation of chain data on a Vaulta node. It implements the core functionality provided by the [Chain API plugin](./chain-api-plugin.md).
 
 ## Usage
 

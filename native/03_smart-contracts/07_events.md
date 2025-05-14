@@ -4,7 +4,7 @@ title: Events
 
 Events are a way for smart contracts to communicate with each other as side-effects of actions.
 
-The most common in-use usage of events is tracking `eosio.token` (`EOS`) transfers, but they can be used for
+The most common in-use usage of events is tracking `core.vaulta` (`A`) transfers, but they can be used for
 any type of communication between contracts.
 
 We will use that exact example below, but first we will cover the basics of events.
@@ -77,7 +77,7 @@ public:
 };
 ```
 
-The `transfer` action above will emit an event to both the `from` and `to` accounts (this is actually how the `eosio.token` contract works).
+The `transfer` action above will emit an event to both the `from` and `to` accounts (this is actually how the `core.vaulta` contract works).
 So if your contract is either the `from` or `to` account, then you can listen for the `transfer` event. If your account is **not**
 either of those accounts, you have no way of listening for the `transfer` event from within the blockchain.
 

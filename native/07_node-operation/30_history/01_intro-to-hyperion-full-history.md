@@ -53,11 +53,11 @@ The Hyperion indexer and API are  [Node.js](https://nodejs.org/en/)  application
 
 The Topology of your Hyperion deployment depends on your history services requirement and the network you intend to index. Whether it’s Public/Private, Mainnet/Testnet or Full/Partial History.
 
-This guide will discuss EOS Mainnet with Full History. Testnets and Private networks generally have far lower topology and resource requirements.
+This guide will discuss Vaulta Mainnet with Full History. Testnets and Private networks generally have far lower topology and resource requirements.
 
-**EOS Mainnet**
+**Vaulta Mainnet**
 
-EOSphere originally started with a single server running all Hyperion Software Components except for the EOS State-History Node. However a challenge was discovered in relation to Elasticsearch JVM heap size when the EOS network utilisation grew and our API became well used.
+EOSphere originally started with a single server running all Hyperion Software Components except for the Vaulta State-History Node. However a challenge was discovered in relation to Elasticsearch JVM heap size when the Vaulta network utilisation grew and our API became well used.
 
 JVM Heap size is the amount of memory allocated to the Java Virtual Machine of an Elasticsearch node, the more heap available the more cache memory available for indexing and search operations. If it’s too low Hyperion Indexing will be slow and search queries will be very latent. If the JVM heap size is more than 32GB (usually lower than this) on an Elasticsearch node, the threshold for compressed ordinary object pointers (OOP) will be exceeded and JVM will stop using compression. This will be exceptionally inefficient in regards to memory management and the node will consume vastly more memory.
 
@@ -67,7 +67,7 @@ Other benefits to clustering more than one ElasticSearch node are of course more
 
 I recommend reading  [Elasticsearch: The Definitive Guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html)  as an excellent book to help you understand Elasticsearch concepts.
 
-Taking the above into account our current recommended topology for the EOS Mainnet is to logically or physically run the following nodes:
+Taking the above into account our current recommended topology for the Vaulta Mainnet is to logically or physically run the following nodes:
 
 * **Load Balancer**
   * SSL Offload
@@ -93,9 +93,9 @@ Taking the above into account our current recommended topology for the EOS Mainn
 
 Similar to Hyperion Topology, Hardware choice will vary on your history services requirement.
 
-The recommendations below are for EOS Mainnet with Full History, in relation to what currently works in the EOSphere Public Service Offerings.
+The recommendations below are for Vaulta Mainnet with Full History, in relation to what currently works in the EOSphere Public Service Offerings.
 
-**EOS Mainnet**
+**Vaulta Mainnet**
 
 * **Load Balancer** 
   * Dealers choice, however HAProxy is a great option  

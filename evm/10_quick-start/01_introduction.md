@@ -2,11 +2,11 @@
 title: Introduction
 ---
 
-EOS EVM is a fully compatible Ethereum Virtual Machine (EVM) that runs on the EOS Network. This opens
-up the EOS Network to the entire Ethereum developer community and tooling.
+Vaulta EVM is a fully compatible Ethereum Virtual Machine (EVM) that runs on Vaulta. This opens
+up Vaulta to the entire Ethereum developer community and tooling.
 
-You can now take advantage of the EOS Network's high throughput and low latency by deploying and running 
-smart contracts written for the EVM on the EOS Network.
+You can now take advantage of Vaulta's high throughput and low latency by deploying and running 
+smart contracts written for the EVM on Vaulta.
 
 ## Features
 

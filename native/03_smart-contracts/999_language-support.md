@@ -3,7 +3,7 @@ title: Language Support
 ---
 
 Aside from C++, there are a number of community-led initiatives for extending language support for smart contracts
-written for EOS. 
+written for Vaulta. 
 
 Here is a list of currently maintained projects:
 

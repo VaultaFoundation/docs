@@ -2,11 +2,11 @@
 title: Hardware Requirements
 ---
 
-The hardware requirements for each type of EOS node can vary depending on factors such as network size, transaction volume, and the number of concurrent users. However, here are some general guidelines for the hardware requirements of different EOS node types:
+The hardware requirements for each type of Vaulta node can vary depending on factors such as network size, transaction volume, and the number of concurrent users. However, here are some general guidelines for the hardware requirements of different Vaulta node types:
 
 ## API Node without Blocks Log
 
-> ℹ️ The blocks log is a record of all the blocks in the blockchain and their associated transactions. The blocks log provides a comprehensive history of the transactions and changes that have occurred on the EOS network.
+> ℹ️ The blocks log is a record of all the blocks in the blockchain and their associated transactions. The blocks log provides a comprehensive history of the transactions and changes that have occurred on Vaulta.
 
 The minimum, starting point, for an API node, without maintaining blocks log, is the following:
 

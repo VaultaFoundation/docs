@@ -136,7 +136,7 @@ function myFunction() public myModifier1 myModifier2 {}
 
 Functions can accept the native currency of the blockchain as payment. This is done by declaring the function as `payable`.
 
-In the case of the EOS EVM, this is EOS.
+In the case of the Vaulta EVM, this is EOS.
 
 ```solidity
 function myFunction() public payable {

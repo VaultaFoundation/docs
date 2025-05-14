@@ -12,7 +12,7 @@ and added to the blockchain via blocks. Transactions are made up of **actions**.
 
 ## What are actions?
 
-Actions are the smallest unit of work in EOS. Each transaction include one or more actions within it. The ability to include
+Actions are the smallest unit of work in Vaulta. Each transaction include one or more actions within it. The ability to include
 multiple actions within a transactions allows you to perform atomic operations across multiple smart contracts. 
 Actions are executed in the order they are included in the transaction, and if any action fails the entire transaction is rolled back.
 

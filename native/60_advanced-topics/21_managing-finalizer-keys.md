@@ -30,7 +30,7 @@ Setting `vote-threads` on a nodeos instance is expensive, consuming CPU and addi
 Block Producers may have an intermediate nodeos instance sitting in between their block producing nodeos and peer finalizers. In this setup each nodeos, local finalizer, intermediate node, and peer finalizer, must be able to send and forward votes. With this setup there would be a BLS finalizer key for the block producing nodes. The intermediate node would not need a BLS finalizer key. The intermediate node must set their `vote-threads` > 0 *default in Spring v1 is 4 threads*.
 
 ### Rotating Keys
-The EOS blockchain, allows producers to activate new BLS finalizer keys at anytime with an on-chain action `actfinkey`. Before called the `actfinkey` action, the key must already exist in the `signature-provider` configuration when the instance of nodeos is started, and the key must be registered using the `regfinkey` action. Activating a new BLS finalizer key is always safe, and may be performed at anytime.
+The Vaulta blockchain, allows producers to activate new BLS finalizer keys at anytime with an on-chain action `actfinkey`. Before called the `actfinkey` action, the key must already exist in the `signature-provider` configuration when the instance of nodeos is started, and the key must be registered using the `regfinkey` action. Activating a new BLS finalizer key is always safe, and may be performed at anytime.
 
 See How To [Rotate BLS Finalizer Keys](../../node-operation/tutorials/Rotate-BLS-Finalizer-Keys) for specific instructions on moving to new finalizer keys
 

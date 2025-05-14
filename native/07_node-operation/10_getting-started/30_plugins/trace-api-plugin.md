@@ -3,7 +3,7 @@ title: trace_api_plugin
 dont_translate_title: true
 ---
 
-See [Trace API Reference](https://docs.eosnetwork.com/apis/leap/latest/trace_api.api/).
+See [Trace API Reference](https://docs.vaulta.com/apis/leap/latest/trace_api.api/).
 
 ## Overview
 
@@ -11,13 +11,13 @@ The `trace_api_plugin` offers a consumer-oriented API that allows for the retrie
 
 ## Purpose
 
-When integrating applications like block explorers and exchanges with an EOS blockchain, there is often a need for a comprehensive record of all actions processed by the blockchain. This includes actions generated from executing smart contracts and scheduled transactions. The `trace_api_plugin` was designed to address this requirement.
+When integrating applications like block explorers and exchanges with a Vaulta blockchain, there is often a need for a comprehensive record of all actions processed by the blockchain. This includes actions generated from executing smart contracts and scheduled transactions. The `trace_api_plugin` was designed to address this requirement.
 
 The primary objective of the `trace_api_plugin` is to provide the following functionalities:
 
 * Provision of a transcript that includes retired actions and their associated metadata.
 * Availability of a consumer-focused, long-term API for retrieving blocks.
-* Enhancement of resource management within EOS nodes, ensuring sustainable usage of resources such as file system storage, disk space, and memory.
+* Enhancement of resource management within Vaulta nodes, ensuring sustainable usage of resources such as file system storage, disk space, and memory.
 
 While the `state_history_plugin` provides a binary streaming interface to access structural chain data, action data, and state deltas, the main focus of the `trace_api_plugin` is to improve the maintenance of node resources, including the file system, disk space, and memory utilization.
 
@@ -125,7 +125,7 @@ Compressed trace log files have the `.clog` file extension (see [Compression of 
 The data is compressed into raw zlib form with full-flush *seek points* placed at regular intervals. A decompressor can start from any of these *seek points* without reading previous data and it can also traverse a seek point without issue if it appears within the data.
 
 > ℹ️ Size reduction of trace logs  
-> Data compression can reduce the space growth of trace logs twentyfold! For instance, with 512 seek points and using the test dataset on the EOS public network, data compression reduces the growth of the trace directory from &#126;50 GiB/day to &#126;2.5 GiB/day for full data. Due to the high redundancy of the trace log contents, the compression is still comparable to `gzip -9`. The decompressed data is also made immediately available via the Trace RPC API without any service degradation.
+> Data compression can reduce the space growth of trace logs twentyfold! For instance, with 512 seek points and using the test dataset on the Vaulta public network, data compression reduces the growth of the trace directory from &#126;50 GiB/day to &#126;2.5 GiB/day for full data. Due to the high redundancy of the trace log contents, the compression is still comparable to `gzip -9`. The decompressed data is also made immediately available via the Trace RPC API without any service degradation.
 
 #### Role of seek points
 
@@ -156,7 +156,7 @@ The `trace_api_plugin` also supports an option to optimize disk space by applyin
 If the argument `N` is 0 or greater, the plugin automatically sets a background thread to compress the irreversible sections of the trace log files. The previous N irreversible blocks past the current LIB block are left uncompressed.
 
 > ℹ️ Trace API utility  
-> The trace log files can also be compressed manually with the [trace_api_util](https://docs.eosnetwork.com/manuals/leap/latest/utilities/trace_api_util) utility.
+> The trace log files can also be compressed manually with the [trace_api_util](https://docs.vaulta.com/manuals/leap/latest/utilities/trace_api_util) utility.
 
 If resource usage cannot be effectively managed via the `trace-minimum-irreversible-history-blocks` and `trace-minimum-uncompressed-irreversible-history-blocks` options, then there might be a need for periodic manual maintenance. In that case, the user may opt to manage resources through an external system or recurrent process.
 

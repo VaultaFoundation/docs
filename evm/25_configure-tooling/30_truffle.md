@@ -2,7 +2,7 @@
 title: Truffle
 ---
 
-Modify your `truffle-config.js` to add the EOS EVM to [Truffle](https://www.trufflesuite.com/):
+Modify your `truffle-config.js` to add the Vaulta EVM to [Truffle](https://www.trufflesuite.com/):
 
 ```javascript
 require('dotenv').config();
@@ -10,11 +10,11 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
     networks: {
-        eosevm: {
+        vaulta_evm: {
             provider: new HDWalletProvider([process.env.PRIVATE_KEY], "https://api.evm.eosnetwork.com"),
             network_id: 17777,
         },
-        eosevm_testnet: {
+        vaulta_evm_testnet: {
             provider: new HDWalletProvider([process.env.PRIVATE_KEY], "https://api.testnet.evm.eosnetwork.com"),
             network_id: 15557,
         },

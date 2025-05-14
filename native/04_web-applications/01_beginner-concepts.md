@@ -3,7 +3,7 @@ title: Beginner Concepts
 ---
 
 <head>
-  <title>EOS dApps - Beginner Concepts</title>
+  <title>Vaulta dApps - Beginner Concepts</title>
 </head>
 
 A lot of tutorials for building decentralized web applications dive straight into the code but do not explain 

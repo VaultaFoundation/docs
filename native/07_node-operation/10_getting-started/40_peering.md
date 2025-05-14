@@ -4,18 +4,18 @@ title: Peering
 
 # Peering
 
-EOS blockchains may consist of one or many nodes. Although a single node can still run a fully functional blockchain, it cannot scale or grow. To grasp the full benefits of the EOS blockchain technology, more nodes are needed. In this section, you will learn about "peering", the network feature that makes it possible. This is what allows to grow incrementally from a single node to a truly decentralized, geographically distributed, multi node EOS blockchain.
+Vaulta blockchains may consist of one or many nodes. Although a single node can still run a fully functional blockchain, it cannot scale or grow. To grasp the full benefits of the Vaulta blockchain technology, more nodes are needed. In this section, you will learn about "peering", the network feature that makes it possible. This is what allows to grow incrementally from a single node to a truly decentralized, geographically distributed, multi node Vaulta blockchain.
 
 ## What is Peering?
 
-Peering allows EOS nodes to propagate and synchronize the distributed blockchain state by receiving and relaying blocks and/or transactions to other nodes. Any node that is configured to send and receive data in a peer-to-peer fashion is considered a "peer". This adds redundancy and allows for faster response times to client queries and node requests. Therefore, peering is key to the decentralized operation and incremental growth of the EOS blockchain.
+Peering allows Vaulta nodes to propagate and synchronize the distributed blockchain state by receiving and relaying blocks and/or transactions to other nodes. Any node that is configured to send and receive data in a peer-to-peer fashion is considered a "peer". This adds redundancy and allows for faster response times to client queries and node requests. Therefore, peering is key to the decentralized operation and incremental growth of the Vaulta blockchain.
 
-> ℹ️ EOS Network Protocol  
-Peering is enabled through the EOS peer-to-peer (p2p) network protocol and it is what allows the decentralized operation of the blockchain. For more information, check the [EOS Network Protocol](../../60_advanced-topics/03_network-peer-protocol.md).
+> ℹ️ Vaulta Network Protocol  
+Peering is enabled through the Vaulta peer-to-peer (p2p) network protocol and it is what allows the decentralized operation of the blockchain. For more information, check the [Vaulta Network Protocol](../../60_advanced-topics/03_network-peer-protocol.md).
 
 ## Why you need nodes/peers?
 
-In the EOS blockchain, nodes can be configured to operate in different ways. It is this flexibility in having nodes serve distinct roles which allows for a more distributed load and a smoother blockchain experience for the end user. Some of the node types in EOS include, but are not limited to:
+In the Vaulta blockchain, nodes can be configured to operate in different ways. It is this flexibility in having nodes serve distinct roles which allows for a more distributed load and a smoother blockchain experience for the end user. Some of the node types in Vaulta include, but are not limited to:
 
 * **Producing Nodes**: produce blocks to be added to the chain
 * **Relay Nodes**: validate/relay blocks and/or transactions
@@ -23,12 +23,12 @@ In the EOS blockchain, nodes can be configured to operate in different ways. It 
 * **History Nodes**: stores chain data for L2 history solutions
 * etc.
 
-Therefore, when set up as peers, EOS nodes validate the blocks and transactions they receive and relay them to other peers by default, if valid. Nodes can also be set up to respond to API requests from clients, provide historical data about blocks and transactions, etc. This separation of concerns makes the blockchain more efficient.
+Therefore, when set up as peers, Vaulta nodes validate the blocks and transactions they receive and relay them to other peers by default, if valid. Nodes can also be set up to respond to API requests from clients, provide historical data about blocks and transactions, etc. This separation of concerns makes the blockchain more efficient.
 
 ## How to set up peers
 
 > ℹ️ Peer Setup  
-The peer connection process must be performed on the local environment of each peer. Therefore, peering involves planning and agreement among some of the nodes that will act as peers in the EOS network.
+The peer connection process must be performed on the local environment of each peer. Therefore, peering involves planning and agreement among some of the nodes that will act as peers in the Vaulta network.
 
 Peering can be set up by configuring the `net_plugin` of each `nodeos` instance whose node will act as a peer. The most important options are:
 
@@ -48,11 +48,11 @@ To peer your local node with other nodes, specify the following in your nodeos `
 # your listening host:port
 p2p-listen-endpoint = <myhost>:<myport>   # e.g. 0.0.0.0:9876
 # your public host:port
-p2p-server-address = <mypubhost>:<myport> # e.g. p2p.eos99.io:9876
+p2p-server-address = <mypubhost>:<myport> # e.g. p2p.vaulta99.io:9876
 
 # peers host:port (for each peer to connect to)
 p2p-peer-address = <host1>:<port1>  # e.g. peer.leap.sg:9876
-p2p-peer-address = <host2>:<port2>  # e.g. p2p.eosphere.io:3571
+p2p-peer-address = <host2>:<port2>  # e.g. p2p.vaultaphere.io:3571
 # etc.
 ```
 
@@ -73,20 +73,19 @@ Check the previous section [Peer setup using `config.ini`](#peer-setup-using-con
 
 ## How to locate peers
 
-For the EOS Mainnet and various Testnets, some websites publish and maintain lists of P2P, API, and other endpoints for your nodes to connect to.
+For the Vaulta Mainnet and various Testnets, some websites publish and maintain lists of P2P, API, and other endpoints for your nodes to connect to.
 
 > ℹ️ Endpoints and BP.json  
 Endpoint lists are typically generated, validated, and combined from the standard `bp.json` files provided by Block Producers, including Standby Producers.
 
-For a central portal that maintains the recent status of *all* active endpoints (P2P, API, History, etc.) for the EOS Mainnet and various EOS Testnets, you can visit the EOS Nation Validate Portal and select the **endpoints report** for the specific network:
+For a central portal that maintains the recent status of *all* active endpoints (P2P, API, History, etc.) for the Vaulta Mainnet and various Vaulta Testnets, you can visit the EOS Nation Validate Portal and select the **endpoints report** for the specific network:
 
-* EOS Mainnet endpoints: https://validate.eosnation.io/eos/reports/endpoints.html
+* Vaulta Mainnet endpoints: https://validate.eosnation.io/eos/reports/endpoints.html
 * Jungle Testnet endpoints: https://validate.eosnation.io/jungle4/reports/endpoints.html
-* Kylin Testnet: https://validate.eosnation.io/kylin/reports/endpoints.html
 
 Once you visit any of the above **endpoints report**, you can scroll down to the specific endpoints of interest: `api_http` or `api_https2` for API endpoints, `p2p` for P2P endpoints, etc.
 
-### For EOS Mainnet
+### For Vaulta Mainnet
 
 Besides the **endpoints report** URLs listed in the parent section above [How to locate peers](#how-to-locate-peers), the following endpoints are available to add directly to your `config.ini`:
 
@@ -96,7 +95,7 @@ The above P2P endpoints list should display something similar to:
 
 ```ini
 # Endpoints config.ini
-# Network: EOS
+# Network: Vaulta
 # Validator last update: 2023-06-12 19:32 UTC
 # For details on how this is generated see https://validate.eosnation.io/about/
 # ==== p2p ====
@@ -115,7 +114,7 @@ The above API endpoints list should display something similar to:
 
 ```ini
 # API Versions Report
-# Network: EOS
+# Network: Vaulta
 # Validator last update: 2023-06-12 20:06 UTC
 # For details on how this is generated see https://validate.eosnation.io/about/
 ==== 4.0.1 (leap) ====
@@ -130,37 +129,30 @@ teamgreymass api_http, v3.1.0, http://eos.greymass.com, ...
 teamgreymass api_https2, v3.1.0, https://eos.greymass.com, ...
 ```
 
-### For EOS Testnets
+### For Vaulta Testnets
 
 Besides the **endpoints report** URLs listed in the parent section [How to locate peers](#how-to-locate-peers), the following endpoints are available to add directly to your `config.ini` for the following EOS Testnets:
 
-#### EOS Jungle Testnet
+#### Vaulta Jungle Testnet
 
 * P2P Endpoints: https://validate.eosnation.io/jungle4/reports/config.txt
 * API Endpoints: https://validate.eosnation.io/jungle4/reports/api_versions.txt
-
-#### EOS Kylin Testnet
-
-* P2P Endpoints: https://validate.eosnation.io/kylin/reports/config.txt
-* API Endpoints: https://validate.eosnation.io/kylin/reports/api_versions.txt
 
 ## How to check peers health
 
 Some web portals provide periodic reports and/or live monitoring to check the health of public P2P and API endpoints. Also, some real-time tools allow to estimate the proximity and/or response time of P2P or API endpoints.
 
-### EOS Nation Reports
+### Vaulta Nation Reports
 
-EOS Nation provides extensive reports on the status of various endpoints, including the health of block producing nodes, for both the EOS Mainnet and various EOS Testnets:
+EOS Nation provides extensive reports on the status of various endpoints, including the health of block producing nodes, for both the Vaulta Mainnet and various Vaulta Testnets:
 
-* EOS Mainnet reports: https://validate.eosnation.io/eos/reports/
+* Vaulta Mainnet reports: https://validate.eosnation.io/eos/reports/
 * Jungle Testnet reports: https://validate.eosnation.io/jungle4/reports/
-* Kylin Testnet reports: https://validate.eosnation.io/kylin/reports/
 
 Since the endpoints listed on the above reports are validated and refreshed every 30 minutes, the mere presence of an endpoint on a given report indicates a *responsive* status. For other errors detected during `bp.json` validation, check these resources:
 
-* EOS Mainnet error report: https://validate.eosnation.io/eos/reports/errors.html
+* Vaulta Mainnet error report: https://validate.eosnation.io/eos/reports/errors.html
 * Jungle Testnet error report: https://validate.eosnation.io/jungle4/reports/errors.html
-* Kylin Testnet error report: https://validate.eosnation.io/kylin/reports/errors.html
 
 ### Third-party Tools
 
@@ -171,4 +163,4 @@ Some tools are available to measure the responsiveness, or lack thereof, of a li
 
 ## Summary
 
-Peering is crucial for the decentralized operation of any EOS blockchain network. It allows to synchronize and distribute the blockchain state among all nodes and peers for a smoother and faster blockchain experience. Peering is necessary for any EOS blockchain to grow organically, reach consensus, achieve self-governance, and exploit many of the benefits of blockchain technology.
+Peering is crucial for the decentralized operation of any Vaulta blockchain network. It allows to synchronize and distribute the blockchain state among all nodes and peers for a smoother and faster blockchain experience. Peering is necessary for any Vaulta blockchain to grow organically, reach consensus, achieve self-governance, and exploit many of the benefits of blockchain technology.

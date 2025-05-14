@@ -26,4 +26,4 @@ To solve the `Could not grow database file to requested size` error, start `node
 
 ## 4. 3070000: WASM Exception Error
 
-If you get an error such as `Publishing contract... Error 3070000: WASM Exception Error Details: env.set_proposed_producers_ex unresolveable` when you try to deploy `eosio.bios` contract or `eosio.system` contract in an attempt to boot an EOS blockchain (locally or testnet), you must activate the `PREACTIVATE_FEATURE` protocol first.
+If you get an error such as `Publishing contract... Error 3070000: WASM Exception Error Details: env.set_proposed_producers_ex unresolveable` when you try to deploy `eosio.bios` contract or `eosio.system` contract in an attempt to boot an Vaulta blockchain (locally or testnet), you must activate the `PREACTIVATE_FEATURE` protocol first.
