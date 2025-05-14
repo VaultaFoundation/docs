@@ -194,7 +194,7 @@ aimed at rewarding the Vaulta community.
 It allows the Vaulta blockchain to define a [set of receivers](https://unicove.com/contract/eosio.reward/tables/strategies) 
 that will receive rewards, and a weight for each receiver.
 
-See the [inflows](./20_token-flows) document for more information on how the reward contract is funded.
+See the [inflows](./token-flows) document for more information on how the reward contract is funded.
 
 > **Note**   
 > Modifying strategies is controlled by the block producers and requires a 15/21 multisig to change.

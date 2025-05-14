@@ -141,7 +141,7 @@ To accommodate new Savanna consensus information, a new `finality-data-history` 
 
 ### New Finalizer Configuration Options
 Scripts that move or delete the ‘data’ directory need to protect the finalizer safety file, or utilize this option to set another location for the finalizer safety.dat file.
-- `finalizers-dir` - Specifies the directory path for storing voting history. Node Operators may want to specify a directory outside of their nodeos' data directory, and manage this as distinct file. More information in [Guide to Managing Finalizer Keys](../../../advanced-topics/managing-finalizer-keys).
+- `finalizers-dir` - Specifies the directory path for storing voting history. Node Operators may want to specify a directory outside of their nodeos' data directory, and manage this as distinct file. More information in [Guide to Managing Finalizer Keys](../../advanced-topics/managing-finalizer-keys).
 
 ### New `vote-threads` Option
 Where there is a block producing node that connects to its peers through an intermediate nodeos, the intermediate nodeos will need to have an integer value greater than 0 for `vote-threads`. The default value for `vote-threads` is 4. When `vote-threads` is not an integer greater than 0, votes are not propagated. See [Voting and Peering](../../advanced-topics/introduction-finalizers-voting/#voting-and-peering) for more background and recomendations on configuring `vote-threads`.
